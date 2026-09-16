@@ -59,24 +59,29 @@
 <!--OPEN_PRS:START-->
 | 仓库 | PR | 标题 | 作者 | 状态 | 更新 |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#224](https://github.com/travnie/aistee/pull/224) | Test wide Web provider navigation on Android 16 | @trvny | 草稿 | 2026-09-15 |
+| travnie/aistee | [#228](https://github.com/travnie/aistee/pull/228) | Preserve WebViews across UI hiding | @trvny | 草稿 | 2026-09-16 |
+| travnie/Kanarek | [#96](https://github.com/travnie/Kanarek/pull/96) | chore(deps): bump actions/setup-java from 5.7.0 to 6.0.1 | @dependabot[bot] | 就绪 | 2026-09-16 |
+| travnie/Kanarek | [#97](https://github.com/travnie/Kanarek/pull/97) | chore(deps): bump the androidx group with 6 updates | @dependabot[bot] | 就绪 | 2026-09-16 |
+| travnie/Kanarek | [#98](https://github.com/travnie/Kanarek/pull/98) | chore(deps): bump the kotlin group with 2 updates | @dependabot[bot] | 就绪 | 2026-09-16 |
+| travnie/Kanarek | [#99](https://github.com/travnie/Kanarek/pull/99) | chore(deps): bump org.robolectric:robolectric from 4.16.1 to 4.17 | @dependabot[bot] | 就绪 | 2026-09-16 |
+| travnie/twojstar | [#144](https://github.com/travnie/twojstar/pull/144) | ci: add the Claude Code workflow, four triggers in one file | @trvny | 就绪 | 2026-09-16 |
 <!--OPEN_PRS:END-->
 
 ### 💬 抽屉里的名言
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝“The problem of viruses is temporary and will be solved in two years.”— John McAfee, 1988❞</i>
+<i>❝The worst breach of U.S. military computers in history happened when someone picked up a memory stick (infected by a foreign intelligence agency) they found in the parking lot and plugged it into their computer, which was attached to United States Central Command.❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 最近播出
 
 <!--README_FEED:START-->
-- [What Would Need to Happen to Slow AI Development?](https://carnegieendowment.org/emissary/2026/09/ai-development-slow-pace-what-happens)
-- [Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says](https://www.reuters.com/world/middle-east/iran-war-cost-hits-38-billion-forecast-rise-3-billion-month-cbo-says-2026-09-15/)
-- [Libya NOC chief says production not greatly affected after protests hit oil facilities](https://www.reuters.com/business/energy/libyas-noc-says-it-may-declare-force-majeure-after-protests-hit-oil-facilities-2026-09-15/)
-- [Kennedy Center board votes to close for renovations after judge blocks Trump's name from facade](https://www.reuters.com/world/us/kennedy-center-board-vote-venues-future-says-trump-name-critical-survival-2026-09-15/)
-- [Prosecutors rule out death penalty for son of slain filmmaker Rob Reiner](https://www.reuters.com/legal/litigation/prosecutors-will-not-seek-death-penalty-nick-reiner-2026-09-15/)
-- [US agency orders Tesla to answer questions on Cybercab certification](https://www.reuters.com/business/autos-transportation/us-agency-orders-tesla-answer-questions-cybercab-certification-2026-09-15/)
+- [Oto "genetyczny ChatGPT". Tak wygląda potężna broń naukowców](https://antyweb.pl/genetyczny-chatgpt)
+- [Nowy Park Wodny niedaleko Krakowa! Już gotowy, otwarcie we wrześniu. Basen w Krzeszowicach czeka jeszcze na cennik - Dziennik Polski](https://news.google.com/atom/articles/CBMi7AFBVV95cUxNSHZ3aldwaXJYUHJIekxWem1WaEhBaEdfbm8waUFrdU1tanhwVmNuMGkyME53NlNyNzRRbXk1MWlzT0dqam9maExBV1NnbEJ0MHNIX2NKUzdUejlObEI1ZFNyYVUzWkU4UDZGd21la3c0VGxDeF9Yd1VZV3NPVnNRVm8tYTRlX0duNkVUd2loUHZEaVZoN0NrWkJVSFp5TnFqTXJsTnF4X1RBYVg1dHVMVmZrbU52alNHT2p3Mk9Na3pCREYwS01GWG1OUFBLUjVNbm5WOGxtMzQzRDVLRUZDVUo3c0lzTWhoWkN2Ng?oc=5)
+- [Procesory Apple M5 Ultra i M6 biją nowe rekordy. Brak im konkurencji](https://antyweb.pl/procesory-apple-m5-ultra-i-m6-bija-nowe-rekordy-brak-im-konkurencji)
+- [9-latek wydał 446 tysięcy złotych na reklamy swoich filmików. Policzyłem, co za te pieniądze dostał](https://promptowy.com/9-latek-118-tysiecy-dolarow-reklamy-youtube/)
+- [Kolejowa inwestycja za 147 mln zł w Jaworznie. Projekt wrócił do procedowania - jaw.pl](https://news.google.com/atom/articles/CBMiZEFVX3lxTE01elNJOWxVbWprdjNNbkxJR0VLRkdlREZvV2FiODQwSS0zU3hQMGxkT291M0dMc0RhSjZMcjVNU3BGNXJXcGNrZGhqMFdxazR5cl9qdXZNWGRQMDRJcEhEelZIWU0?oc=5)
+- [Degradation with Gemini 3.8 Flash](https://www.githubstatus.com/incidents/nlxnbqnkdzdl)
 <!--README_FEED:END-->
