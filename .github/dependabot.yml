@@ -1,11 +1,9 @@
-# Keeps shared GitHub Actions references current.
 version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
       time: "21:37"
       timezone: "Europe/Warsaw"
     open-pull-requests-limit: 5
