@@ -55,25 +55,28 @@
 <!--OPEN_PRS:START-->
 | Repository | PR | Title | Author | State | Updated |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#396](https://github.com/travnie/aistee/pull/396) | feat(agent-lab): open Claude Code tasks via official Android handoff | @trvny | ready | 2026-10-17 |
-| travnie/aistee | [#399](https://github.com/travnie/aistee/pull/399) | deps: bump the gradle-minor-patch group with 4 updates | @dependabot[bot] | ready | 2026-10-17 |
+| travnie/Autka | [#244](https://github.com/travnie/Autka/pull/244) | deps(backend): bump the backend-minor-patch group in /backend with 4 updates | @dependabot[bot] | ready | 2026-10-19 |
+| travnie/Autka | [#245](https://github.com/travnie/Autka/pull/245) | deps: bump org.maplibre.gl:android-sdk from 13.6.1 to 13.7.1 in the misc-minor-patch group | @dependabot[bot] | ready | 2026-10-19 |
+| travnie/Autka | [#246](https://github.com/travnie/Autka/pull/246) | ci: bump actions/setup-java from 6.0.1 to 6.1.0 in the actions group | @dependabot[bot] | ready | 2026-10-19 |
+| travnie/Kanarek | [#176](https://github.com/travnie/Kanarek/pull/176) | feat(tools): offline Codebench, Docbench, Streambench and native exports | @trvny | ready | 2026-10-19 |
+| travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | draft | 2026-10-19 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Quote from the drawer
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝“Without a systematic way to start and keep data clean, bad data will happen.”— Donato Diorio❞</i>
+<i>❝“I do not fear computers. I fear lack of them.”— Isaac Asimov❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 Recently on the air
 
 <!--README_FEED:START-->
-- [Nawet 2500 zł miesięcznie na pomoc dla seniorów. Trzeba się pośpieszyć - Przelom.pl](https://news.google.com/atom/articles/CBMiswFBVV95cUxPaU5xTTlhMXA3R0lNeUkzT1JSYjdNck45emw2cTVBR2kwcTBvaTRtbGJLbm8yX2VhMnFYNHVyTFBpaVNwbi1XZFJGbGQ0RzJkVE5vU3pZT0twckk4TVMwOGhCTEc3bm90QW1BRWFCaEhrcE0wWk54c0NkLVdLSW9QNVR4Y2xTMWNPN0MyRzZib0NNZVVSVGFrZ2I4MzRUWVVPenoyVzh3aGxSQkQ2ejNTSTYzaw?oc=5)
-- [Mówiąca AI influencerka lokalnie: Kandinsky 6 i Wan 2.2](https://promptowy.com/ai-influencerka-wideo-lokalnie/)
-- [Ukrainian foreign minister says Russian-held town is a 'death trap' with starving residents](https://www.reuters.com/world/ukrainian-foreign-minister-says-russian-held-town-is-death-trap-with-starving-2026-10-17/)
-- [github-advanced-security created review 5560129998 on PR #399 in travnie/aistee](https://github.com/travnie/aistee/pull/399?feedseek_event=17499601129#pullrequestreview-5560129998)
-- [github-advanced-security commented on PR #399 in travnie/aistee · comment 4304538333](https://github.com/travnie/aistee/pull/399?feedseek_event=17499600796#discussion_r4304538333)
-- [github-actions published release aistee-latest in travnie/aistee](https://github.com/travnie/aistee/releases/tag/aistee-latest#feedseek-event-17499576281)
+- [Przejście podziemne w Chrzanowie zamknięte. Trwa wielkie czyszczenie - Przelom.pl](https://news.google.com/atom/articles/CBMiwAFBVV95cUxQNVAwQWVCWmNJWlVKVjNnRXVjQ1J6SzAxdW9LX1prNk1OdFUwb1BpYkhiMmUwQkxWazhQVDFpUlV0MUV5MWFDY1RjbE5KcE1hVHFHclB4MDVyamxMbXV1aU5RRng1blVFZWUwSnVteGJJZTV3dElCU3dPQ1l1MTdWSHM0eVloS0VnNGpELXFTUTV5Z3d2Rk1pSEt1RTlTRjVzaWg5MUVINUI0VXRZRG5Qb3pwaGZGNXNFbVZFZFZkb2o?oc=5)
+- [EXCLUSIVE: OpenAI seeks to accelerate fundraising ahead of Anthropic IPO, sources say](https://www.reuters.com/world/openai-seeks-accelerate-fundraising-ahead-anthropic-ipo-sources-say-2026-10-19/)
+- [US officials plan to travel to Norway, Russia for Ukraine talks, sources say](https://www.reuters.com/world/europe/us-officials-plan-travel-norway-ukraine-talks-sources-say-2026-10-19/)
+- [Nvidia-backed Nscale, Anthropic in talks for new $45 billion AI cloud deal, source says](https://www.reuters.com/technology/nscale-anthropic-talks-45-billion-cloud-computing-deal-bloomberg-news-reports-2026-10-19/)
+- [Former Google CEO Schmidt owns 1% stake in Anthropic, Bloomberg reports](https://www.reuters.com/business/former-google-ceo-schmidt-owns-1-stake-anthropic-bloomberg-reports-2026-10-19/)
+- [Texas federal judge suspended from hearing cases over mental health concerns](https://www.reuters.com/legal/government/texas-federal-judge-suspended-hearing-cases-over-mental-health-concerns-2026-10-19/)
 <!--README_FEED:END-->
