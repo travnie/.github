@@ -55,28 +55,28 @@
 <!--OPEN_PRS:START-->
 | Repository | PR | Title | Author | State | Updated |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/Autka | [#244](https://github.com/travnie/Autka/pull/244) | deps(backend): bump the backend-minor-patch group in /backend with 4 updates | @dependabot[bot] | ready | 2026-10-19 |
-| travnie/Autka | [#245](https://github.com/travnie/Autka/pull/245) | deps: bump org.maplibre.gl:android-sdk from 13.6.1 to 13.7.1 in the misc-minor-patch group | @dependabot[bot] | ready | 2026-10-19 |
-| travnie/Autka | [#246](https://github.com/travnie/Autka/pull/246) | ci: bump actions/setup-java from 6.0.1 to 6.1.0 in the actions group | @dependabot[bot] | ready | 2026-10-19 |
-| travnie/Kanarek | [#176](https://github.com/travnie/Kanarek/pull/176) | feat(tools): offline Codebench, Docbench, Streambench and native exports | @trvny | ready | 2026-10-19 |
-| travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | draft | 2026-10-19 |
+| travnie/Kanarek | [#182](https://github.com/travnie/Kanarek/pull/182) | chore(deps-dev): bump wrangler from 4.149.0 to 4.151.1 in /worker | @dependabot[bot] | ready | 2026-10-21 |
+| travnie/Kanarek | [#183](https://github.com/travnie/Kanarek/pull/183) | chore(deps-dev): bump @cloudflare/workers-types from 5.20261011.1 to 5.20261018.1 in /worker | @dependabot[bot] | ready | 2026-10-21 |
+| travnie/Kanarek | [#184](https://github.com/travnie/Kanarek/pull/184) | chore(deps): bump actions/setup-java from 6.0.1 to 6.1.0 | @dependabot[bot] | ready | 2026-10-21 |
+| travnie/Kanarek | [#185](https://github.com/travnie/Kanarek/pull/185) | chore(deps-dev): bump vitest from 5.0.3 to 5.0.5 in /worker | @dependabot[bot] | ready | 2026-10-21 |
+| travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | draft | 2026-10-21 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Quote from the drawer
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝“I do not fear computers. I fear lack of them.”— Isaac Asimov❞</i>
+<i>❝The first word spoken on the internet was “lo”. It was supposed to be “login” but the computer crashed after the first two letters.❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 Recently on the air
 
 <!--README_FEED:START-->
-- [Przejście podziemne w Chrzanowie zamknięte. Trwa wielkie czyszczenie - Przelom.pl](https://news.google.com/atom/articles/CBMiwAFBVV95cUxQNVAwQWVCWmNJWlVKVjNnRXVjQ1J6SzAxdW9LX1prNk1OdFUwb1BpYkhiMmUwQkxWazhQVDFpUlV0MUV5MWFDY1RjbE5KcE1hVHFHclB4MDVyamxMbXV1aU5RRng1blVFZWUwSnVteGJJZTV3dElCU3dPQ1l1MTdWSHM0eVloS0VnNGpELXFTUTV5Z3d2Rk1pSEt1RTlTRjVzaWg5MUVINUI0VXRZRG5Qb3pwaGZGNXNFbVZFZFZkb2o?oc=5)
-- [EXCLUSIVE: OpenAI seeks to accelerate fundraising ahead of Anthropic IPO, sources say](https://www.reuters.com/world/openai-seeks-accelerate-fundraising-ahead-anthropic-ipo-sources-say-2026-10-19/)
-- [US officials plan to travel to Norway, Russia for Ukraine talks, sources say](https://www.reuters.com/world/europe/us-officials-plan-travel-norway-ukraine-talks-sources-say-2026-10-19/)
-- [Nvidia-backed Nscale, Anthropic in talks for new $45 billion AI cloud deal, source says](https://www.reuters.com/technology/nscale-anthropic-talks-45-billion-cloud-computing-deal-bloomberg-news-reports-2026-10-19/)
-- [Former Google CEO Schmidt owns 1% stake in Anthropic, Bloomberg reports](https://www.reuters.com/business/former-google-ceo-schmidt-owns-1-stake-anthropic-bloomberg-reports-2026-10-19/)
-- [Texas federal judge suspended from hearing cases over mental health concerns](https://www.reuters.com/legal/government/texas-federal-judge-suspended-hearing-cases-over-mental-health-concerns-2026-10-19/)
+- [Star History Monthly October 2026 | Execution](https://www.star-history.com/blog/execution)
+- [Time for Saudi Clarity on Normalization with Israel](https://carnegieendowment.org/research/2026/10/time-for-saudi-clarity-on-normalization-with-israel)
+- [EXCLUSIVE: US orders diplomats to depart Saudi Arabia amid Houthi strikes](https://www.reuters.com/world/middle-east/us-preparing-issue-ordered-departure-some-personnel-gulf-embassies-us-officials-2026-10-21/)
+- [Meta puts Muse agent at heart of AI strategy, plans new stock to power investments](https://www.reuters.com/business/meta-issue-new-class-shares-it-tightens-ai-spending-forecast-2026-10-21/)
+- [Nestle, Zydus, Abbott face India scrutiny over claims on children's products](https://www.reuters.com/legal/litigation/nestle-zydus-abbott-face-india-scrutiny-over-claims-childrens-products-2026-10-21/)
+- [Tesla posts surprise positive cash flow on lower-than-expected AI spending](https://www.reuters.com/business/media-telecom/tesla-revenue-beats-estimates-deliveries-rebound-energy-storage-grows-2026-10-21/)
 <!--README_FEED:END-->
