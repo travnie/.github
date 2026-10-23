@@ -57,10 +57,6 @@
 <!--OPEN_PRS:START-->
 | 仓库 | PR | 标题 | 作者 | 状态 | 更新 |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/Kanarek | [#182](https://github.com/travnie/Kanarek/pull/182) | chore(deps-dev): bump wrangler from 4.149.0 to 4.151.1 in /worker | @dependabot[bot] | 就绪 | 2026-10-21 |
-| travnie/Kanarek | [#183](https://github.com/travnie/Kanarek/pull/183) | chore(deps-dev): bump @cloudflare/workers-types from 5.20261011.1 to 5.20261018.1 in /worker | @dependabot[bot] | 就绪 | 2026-10-21 |
-| travnie/Kanarek | [#184](https://github.com/travnie/Kanarek/pull/184) | chore(deps): bump actions/setup-java from 6.0.1 to 6.1.0 | @dependabot[bot] | 就绪 | 2026-10-21 |
-| travnie/Kanarek | [#185](https://github.com/travnie/Kanarek/pull/185) | chore(deps-dev): bump vitest from 5.0.3 to 5.0.5 in /worker | @dependabot[bot] | 就绪 | 2026-10-21 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | 草稿 | 2026-10-21 |
 <!--OPEN_PRS:END-->
 
@@ -68,7 +64,7 @@
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝The first word spoken on the internet was “lo”. It was supposed to be “login” but the computer crashed after the first two letters.❞</i>
+<i>❝E-Mail was invented before Internet. Shocked!!!! ” I also got shocked after hearing this.”❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
@@ -77,8 +73,8 @@
 <!--README_FEED:START-->
 - [Star History Monthly October 2026 | Execution](https://www.star-history.com/blog/execution)
 - [Time for Saudi Clarity on Normalization with Israel](https://carnegieendowment.org/research/2026/10/time-for-saudi-clarity-on-normalization-with-israel)
-- [EXCLUSIVE: US orders diplomats to depart Saudi Arabia amid Houthi strikes](https://www.reuters.com/world/middle-east/us-preparing-issue-ordered-departure-some-personnel-gulf-embassies-us-officials-2026-10-21/)
-- [Meta puts Muse agent at heart of AI strategy, plans new stock to power investments](https://www.reuters.com/business/meta-issue-new-class-shares-it-tightens-ai-spending-forecast-2026-10-21/)
-- [Nestle, Zydus, Abbott face India scrutiny over claims on children's products](https://www.reuters.com/legal/litigation/nestle-zydus-abbott-face-india-scrutiny-over-claims-childrens-products-2026-10-21/)
-- [Tesla posts surprise positive cash flow on lower-than-expected AI spending](https://www.reuters.com/business/media-telecom/tesla-revenue-beats-estimates-deliveries-rebound-energy-storage-grows-2026-10-21/)
+- [mergify unlabeled PR #343 in travnie/twojstar](https://github.com/travnie/twojstar#feedseek-event-18066715698)
+- [trvny merged PR #343 in travnie/twojstar](https://github.com/travnie/twojstar#feedseek-event-18066712177)
+- [mergify labeled PR #343 in travnie/twojstar](https://github.com/travnie/twojstar#feedseek-event-18066706567)
+- [Russia, Ukraine agree on ceasefire in embattled town, to hold peace talks next month](https://www.reuters.com/world/europe/russia-ukraine-agree-ceasefire-embattled-town-hold-peace-talks-next-month-2026-10-23/)
 <!--README_FEED:END-->
