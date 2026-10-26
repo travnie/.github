@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="28" viewBox="0 0 104 28" role="img" aria-label="Mistral">
+  <title>Mistral</title>
+  <defs>
+    <linearGradient id="mistral-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fa520f"/>
+      <stop offset="1" stop-color="#c73e00"/>
+    </linearGradient>
+    <linearGradient id="mistral-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+      <stop offset=".55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="mistral-clip"><rect width="104" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#mistral-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/>
+    <rect x="34" width="70" height="28" fill="url(#mistral-g)"/>
+    <rect x="34" width="70" height="14" fill="url(#mistral-shine)"/>
+    <rect x="34" width="1" height="28" fill="#c73e00" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="103" height="27" rx="5.5" fill="none" stroke="#c73e00" stroke-opacity=".55"/>
+  <!-- icon: lobehub/lobe-icons (mistral-color), MIT -->
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24"><path d="M3.428 3.4h3.429v3.428H3.428V3.4zm13.714 0h3.43v3.428h-3.43V3.4z" fill="gold"/><path d="M3.428 6.828h6.857v3.429H3.429V6.828zm10.286 0h6.857v3.429h-6.857V6.828z" fill="#FFAF00"/><path d="M3.428 10.258h17.144v3.428H3.428v-3.428z" fill="#FF8205"/><path d="M3.428 13.686h3.429v3.428H3.428v-3.428zm6.858 0h3.429v3.428h-3.429v-3.428zm6.856 0h3.43v3.428h-3.43v-3.428z" fill="#FA500F"/><path d="M0 17.114h10.286v3.429H0v-3.429zm13.714 0H24v3.429H13.714v-3.429z" fill="#E10500"/></svg>
+  <text x="69" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">Mistral</text>
+</svg>
