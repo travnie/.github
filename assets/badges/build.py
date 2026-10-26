@@ -4,9 +4,11 @@
 Icons: @lobehub/icons-static-svg (MIT). Usage:
   npm pack @lobehub/icons-static-svg && tar xzf lobehub-icons-static-svg-*.tgz
   python3 assets/badges/build.py package/icons
+Needs Pillow + a bold font for label widths (DejaVu Sans/Verdana; BADGE_FONT to override).
 
 Style mirrors docs7.svg (hand-made, not generated). Add a badge = add a BADGES row.
 """
+import os
 import re
 import sys
 from pathlib import Path
@@ -16,7 +18,15 @@ from PIL import ImageFont
 HERE = Path(__file__).resolve().parent
 RAW = "https://raw.githubusercontent.com/travnie/.github/main/assets/badges"
 CDN = "https://cdn.jsdelivr.net/gh/travnie/.github@main/assets/badges"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"  # metric stand-in for Verdana Bold
+# Label width metrics only (render uses Verdana). Override: BADGE_FONT=/path/to/bold.ttf
+FONTS = [
+    os.environ.get("BADGE_FONT", ""),
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",  # Debian/Ubuntu
+    "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans-Bold.ttf",  # Fedora
+    "/Library/Fonts/Verdana Bold.ttf",  # macOS
+    "C:/Windows/Fonts/verdanab.ttf",  # Windows
+    "DejaVuSans-Bold.ttf",  # Pillow font search path
+]
 H, TILE, PAD = 28, 34, 12
 
 # group, slug, label, lobe icon, link, gradient start, gradient end, extra
@@ -26,7 +36,9 @@ BADGES = [
     ("Infra", "workers-ai", "Workers AI", "workersai-color", "https://developers.cloudflare.com/workers-ai/", "#f38020", "#a8420a", {}),
     ("Infra", "mcp", "MCP", "mcp", "https://modelcontextprotocol.io", "#33302c", "#0b0b0b", {"ink": "#111111"}),
     ("Infra", "github", "GitHub", "github", "https://github.com", "#2d333b", "#0d1117", {"ink": "#0d1117"}),
+    ("Infra", "copilot", "Copilot", "githubcopilot", "https://github.com/features/copilot", "#8957e5", "#5a32a3", {"ink": "#6e40c9"}),
     ("Routers", "openrouter", "OpenRouter", "openrouter", "https://openrouter.ai", "#6467f2", "#3b3cb8", {"ink": "#4f50d6"}),
+    ("Routers", "aihubmix", "AiHubMix", "aihubmix-color", "https://aihubmix.com", "#2f8bff", "#0057c8", {}),
     ("Routers", "groq", "Groq", "groq", "https://groq.com", "#f55036", "#c2321c", {"ink": "#f55036"}),
     ("Routers", "huggingface", "Hugging Face", "huggingface-color", "https://huggingface.co", "#ffd21e", "#ff9d00", {"text": "#2a1a00"}),
     ("Routers", "ollama", "Ollama", "ollama", "https://ollama.com", "#3a3a3a", "#111111", {"ink": "#111111"}),
@@ -48,7 +60,15 @@ BADGES = [
 # hand-made badges kept as-is, listed in README only
 EXTRA = [("Infra", "docs7", "Docs7", "https://travnie.docs7.io/")]
 
-font = ImageFont.truetype(FONT, 11)
+
+def load_font():
+    """First loadable bold font -> (font, width scale vs Verdana Bold)."""
+    for path in filter(None, FONTS):
+        try:
+            return ImageFont.truetype(path, 11), 1.0 if "verdana" in path.lower() else 1.07
+        except OSError:
+            continue
+    sys.exit("no bold font for label metrics; set BADGE_FONT=/path/to/DejaVuSans-Bold.ttf or Verdana Bold")
 
 
 def icon_body(path: Path, slug: str, ink: str) -> tuple[str, str]:
@@ -68,9 +88,9 @@ def icon_body(path: Path, slug: str, ink: str) -> tuple[str, str]:
     return keep, body
 
 
-def badge(slug, label, icon, c1, c2, ex, icons: Path) -> str:
+def badge(slug, label, icon, c1, c2, ex, icons: Path, font, scale) -> str:
     ink, tile, text = ex.get("ink", "#111111"), ex.get("tile", "#f8fafc"), ex.get("text", "#fff")
-    tw = font.getlength(label) * 1.07  # Verdana runs ~7% wider than DejaVu
+    tw = font.getlength(label) * scale  # Verdana runs ~7% wider than DejaVu
     lw = round(tw + 2 * PAD)
     w = TILE + lw
     keep, body = icon_body(icons / f"{icon}.svg", slug, ink)
@@ -128,8 +148,9 @@ def readme(rows) -> str:
 
 def main():
     icons = Path(sys.argv[1] if len(sys.argv) > 1 else "package/icons")
+    font, scale = load_font()
     for _, slug, label, icon, _, c1, c2, ex in BADGES:
-        (HERE / f"{slug}.svg").write_text(badge(slug, label, icon, c1, c2, ex, icons))
+        (HERE / f"{slug}.svg").write_text(badge(slug, label, icon, c1, c2, ex, icons, font, scale))
     rows = [(g, s, l, h) for g, s, l, _, h, *_ in BADGES] + EXTRA
     order = {"Infra": 0, "Routers": 1, "Models": 2}
     rows.sort(key=lambda r: order[r[0]])
