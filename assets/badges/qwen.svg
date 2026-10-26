@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="95" height="28" viewBox="0 0 95 28" role="img" aria-label="Qwen">
+  <title>Qwen</title>
+  <defs>
+    <linearGradient id="qwen-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#615ced"/>
+      <stop offset="1" stop-color="#3d36c4"/>
+    </linearGradient>
+    <linearGradient id="qwen-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+      <stop offset=".55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="qwen-clip"><rect width="95" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#qwen-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/>
+    <rect x="34" width="61" height="28" fill="url(#qwen-g)"/>
+    <rect x="34" width="61" height="14" fill="url(#qwen-shine)"/>
+    <rect x="34" width="1" height="28" fill="#3d36c4" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="94" height="27" rx="5.5" fill="none" stroke="#3d36c4" stroke-opacity=".55"/>
+  <!-- icon: lobehub/lobe-icons (qwen-color), MIT -->
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24"><path d="M19.713 2.825h-5.907c0-.251-.066-.503-.196-.728L12.819.728A1.46 1.46 0 0 0 11.559 0h-1.58c-.52 0-1 .275-1.26.728l-2.42 4.19a1.45 1.45 0 0 0 0 1.453l.791 1.37c.26.448.74.727 1.26.727h11.36c.52 0 1-.275 1.26-.728l.79-1.37a1.45 1.45 0 0 0 0-1.451l-.79-1.37a1.46 1.46 0 0 0-1.26-.728zM.195 9.905l2.951 5.115a1.46 1.46 0 0 0-.531.531l-.791 1.37a1.45 1.45 0 0 0 0 1.452l.79 1.37c.26.448.74.727 1.26.727h4.84c.52 0 1-.275 1.26-.728l.79-1.37a1.45 1.45 0 0 0 0-1.451L5.086 7.083a1.46 1.46 0 0 0-1.26-.728h-1.58c-.52 0-1 .276-1.26.728l-.79 1.37a1.45 1.45 0 0 0 0 1.452m15.888 13.367 2.951-5.115c.217.125.469.196.728.196h1.582c.52 0 1-.275 1.26-.728l.79-1.37a1.45 1.45 0 0 0 0-1.451l-2.42-4.191a1.46 1.46 0 0 0-1.259-.728h-1.582c-.52 0-1 .276-1.259.728l-5.678 9.838a1.45 1.45 0 0 0 0 1.452l.79 1.37c.26.448.74.727 1.26.727h1.582c.52 0 1-.275 1.26-.728z" fill="#082dff"/></svg>
+  <text x="64.5" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">Qwen</text>
+</svg>

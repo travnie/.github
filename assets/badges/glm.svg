@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="87" height="28" viewBox="0 0 87 28" role="img" aria-label="GLM">
+  <title>GLM</title>
+  <defs>
+    <linearGradient id="glm-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="glm-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+      <stop offset=".55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="glm-clip"><rect width="87" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#glm-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/>
+    <rect x="34" width="53" height="28" fill="url(#glm-g)"/>
+    <rect x="34" width="53" height="14" fill="url(#glm-shine)"/>
+    <rect x="34" width="1" height="28" fill="#111111" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="86" height="27" rx="5.5" fill="none" stroke="#111111" stroke-opacity=".55"/>
+  <!-- icon: lobehub/lobe-icons (zai), MIT -->
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24" fill="#111111" fill-rule="evenodd"><path d="M12.105 2L9.927 4.953H.653L2.83 2h9.276zM23.254 19.048L21.078 22h-9.242l2.174-2.952h9.244zM24 2L9.264 22H0L14.736 2H24z"/></svg>
+  <text x="60.5" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">GLM</text>
+</svg>
