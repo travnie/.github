@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+.mintlify/
+.env
+.env.*
+*.log
+.claude/
+CLAUDE.local.md
