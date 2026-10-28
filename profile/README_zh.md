@@ -57,7 +57,9 @@
 <!--OPEN_PRS:START-->
 | 仓库 | PR | 标题 | 作者 | 状态 | 更新 |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#410](https://github.com/travnie/aistee/pull/410) | deps: bump the gradle-minor-patch group with 7 updates | @dependabot[bot] | 就绪 | 2026-10-24 |
+| travnie/aistee | [#426](https://github.com/travnie/aistee/pull/426) | feat(agent): project Copilot SDK events safely in KMP | @trvny | 就绪 | 2026-10-27 |
+| travnie/aistee | [#427](https://github.com/travnie/aistee/pull/427) | chore(ci): list GitHub Actions first in Dependabot | @trvny | 就绪 | 2026-10-27 |
+| travnie/Autka | [#257](https://github.com/travnie/Autka/pull/257) | deps(backend): bump @cloudflare/workers-types from 5.20261023.1 to 5.20261024.1 in /backend in the backend-minor-patch group | @dependabot[bot] | 就绪 | 2026-10-27 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | 草稿 | 2026-10-24 |
 | travnie/wambridge | [#240](https://github.com/travnie/wambridge/pull/240) | build(foobar): upgrade to SDK 2026-10-01 and Windows 2025 / VS2026 | @trvny | 就绪 | 2026-10-25 |
 <!--OPEN_PRS:END-->
@@ -66,7 +68,7 @@
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝All the domain names such as Google, Log In or Sign Up were free until 1995, but now everyone has to pay for every new domain name.❞</i>
+<i>❝Words are, of course, the most powerful drug used by mankind. — Rudyard Kipling❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
@@ -74,9 +76,9 @@
 
 <!--README_FEED:START-->
 - [Star History Monthly October 2026 | Execution](https://www.star-history.com/blog/execution)
-- [Time for Saudi Clarity on Normalization with Israel](https://carnegieendowment.org/research/2026/10/time-for-saudi-clarity-on-normalization-with-israel)
-- [Pożar pociągu w Balinie. Iskry zapaliły benzynę w 1909 r. - Przelom.pl - portal ziemi chrzanowskiej](https://news.google.com/atom/articles/CBMioAFBVV95cUxPV1JPdk93VlQtRjY4bVoxQ0ljXzcxX3cwWXhvM2ZHSUE0VDdjNlhTR0xQSzlMa0tnYXItbHBieXBmUkVyajN6R1BWamRHU19sTC02Q3oxRXpRcWphS3V1LU1fcWJCN0FVMDg0Qm12Nk0tWTdMRVhRU0ZEWVM1ZGxRd3ZXQm1pdEJsRWhNZWtFSVMyOUdXTVRqdWVDc1czX3NB?oc=5)
-- [Serbia's Vucic concedes defeat to student led movement in parliamentary election](https://www.reuters.com/world/europe/serbias-vucic-concedes-defeat-student-led-movement-parliamentary-election-2026-10-25/)
-- [Będzie duży przełom w polityce Serbii? Zamknięto lokale wyborcze - Radio Zet](https://news.google.com/atom/articles/CBMiogFBVV95cUxPUXJYdUlWWGtzZnhBRTcwOTA0Sy1wRjBhYnVpRmxjWUhYbGNHS0hsOGNDMnl6RUdxZTNwY2dUWjhYc2MyanBNa2RxS09xQm5hT3JvSXk0OGZ0VHNYb3F0SUdNX1N4ZWdBdEZ5Z0ppVnB5U2FnNU10Z2ZLXzdYNVdOcnF5Wk1VczFzM2RwNE05Q0ttWk96VnFkLUxSWTJFakc1LXc?oc=5)
-- [Komisje bez kamer. Czego obawiają się krzeszowiccy radni? - krzeszowiceone.pl](https://news.google.com/atom/articles/CBMiqAFBVV95cUxQMWZFUDVHWkNUVXU2V3NyUGZwcnVUZGF2MEFXRllQcldzd0dBeWY3WkhnQ3R2UGFhVzRXUmkyMWNRQ1VxZXFmVWhOS2c3MnhjcEJsdWpsUkVmemE5anFzUFlDMy16Wk02OTVQM0ppd0NOT2dTb1g5MmdUb090dXZuWGtJdFdoV19yS1o0X3hmcTNVX294Rl9fT3VPVFhGTGVxVnVKQlczcULSAa4BQVVfeXFMT0p4SHVfX2VsRmxFdzdFRmtkU19UVVFxcENYN0VSUTAtVUNoMWo1ZjJ5Q2owbkNxc1VncDhhVWpwUFdNd1Y5WTFYNTNDbDJDdGxxWFZDMDFmR1VweTBLbXhtSkc1eGkwdVpmM3V3VUVrN0tIZzRueFBfSnB6MXgwZ3hzb2gxMjRvUDZVUGI2SDc0UDN2cUVsaUIzU1N4WHV5c0V1ZW9RcW1ZVi1SOVJB?oc=5)
+- [How Middle Powers Can Survive the AI Race](https://carnegieendowment.org/research/2026/10/ai-frontier-technology-middle-power-countries-four-scenarios)
+- [kanarek-companion created review 5675684185 on PR #370 in travnie/twojstar](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396936704#pullrequestreview-5675684185)
+- [claudiusz69 created review 5675663804 on PR #370 in travnie/twojstar](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396800093#pullrequestreview-5675663804)
+- [claudiusz69 commented on PR #370 in travnie/twojstar · comment 4395206564](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396798198#discussion_r4395206564)
+- [claudiusz69 created review 5675663446 on PR #370 in travnie/twojstar](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396798017#pullrequestreview-5675663446)
 <!--README_FEED:END-->
