@@ -1,6 +1,8 @@
-name: travnie CodeQL default setup
+name: travnie CodeQL shared analysis policy
 
-# Keep Default Setup as the workflow owner. This file only extends analysis scope.
+# Applied through the github-codeql-config-file repository property to both
+# Default Setup and Advanced Setup. This file controls query coverage, not jobs.
+# Setup mode is managed by trvny/.github; custom builds stay in each repository.
 queries:
   - uses: security-extended
 
