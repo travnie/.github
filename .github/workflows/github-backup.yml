@@ -2,6 +2,10 @@
 name: GitHub backup
 
 on: # yamllint disable-line rule:truthy
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/github-backup.yml"
   schedule:
     - cron: "37 3 * * 0"
   workflow_dispatch:
