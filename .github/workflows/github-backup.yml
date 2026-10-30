@@ -21,7 +21,7 @@ permissions:
 
 env:
   GCP_PROJECT_ID: travny
-  GCS_BUCKET: backup-travny
+  GCS_BUCKET: travny-backup
   WIF_PROVIDER: projects/944680215331/locations/global/workloadIdentityPools/github-backup/providers/github
   MAX_BACKUP_BYTES: "2147483648"
   MAX_BILLABLE_BYTES: "4294967296"
