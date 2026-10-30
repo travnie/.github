@@ -2,6 +2,10 @@
 name: GitHub backup
 
 on: # yamllint disable-line rule:truthy
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/github-backup.yml"
   schedule:
     - cron: "37 3 * * 0"
   workflow_dispatch:
@@ -20,9 +24,9 @@ permissions:
   id-token: write
 
 env:
-  GCP_PROJECT_ID: gen-lang-client-0123391680
-  GCS_BUCKET: zasobnik-tr
-  WIF_PROVIDER: projects/833314992090/locations/global/workloadIdentityPools/github-actions/providers/twojstar-backup
+  GCP_PROJECT_ID: travny
+  GCS_BUCKET: travny-github-backup
+  WIF_PROVIDER: projects/944680215331/locations/global/workloadIdentityPools/github-backup/providers/github
   MAX_BACKUP_BYTES: "2147483648"
   MAX_BILLABLE_BYTES: "4294967296"
   FILTERED_REPOSITORY: trvny/feedseek
