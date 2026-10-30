@@ -57,18 +57,17 @@
 <!--OPEN_PRS:START-->
 | Repozytorium | PR | Tytuł | Autor | Stan | Aktualizacja |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#426](https://github.com/travnie/aistee/pull/426) | feat(agent): project Copilot SDK events safely in KMP | @trvny | gotowy | 2026-10-27 |
-| travnie/aistee | [#427](https://github.com/travnie/aistee/pull/427) | chore(ci): list GitHub Actions first in Dependabot | @trvny | gotowy | 2026-10-27 |
-| travnie/Autka | [#257](https://github.com/travnie/Autka/pull/257) | deps(backend): bump @cloudflare/workers-types from 5.20261023.1 to 5.20261024.1 in /backend in the backend-minor-patch group | @dependabot[bot] | gotowy | 2026-10-27 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | wersja robocza | 2026-10-24 |
-| travnie/wambridge | [#240](https://github.com/travnie/wambridge/pull/240) | build(foobar): upgrade to SDK 2026-10-01 and Windows 2025 / VS2026 | @trvny | gotowy | 2026-10-25 |
+| travnie/wambridge | [#248](https://github.com/travnie/wambridge/pull/248) | chore(deps): bump com.android.application from 9.4.1 to 9.5.0 in /mobile in the gradle group | @dependabot[bot] | gotowy | 2026-10-29 |
+| travnie/wambridge | [#249](https://github.com/travnie/wambridge/pull/249) | chore(deps-dev): bump ruff from 0.17.1 to 0.17.2 in the uv group | @dependabot[bot] | gotowy | 2026-10-29 |
+| travnie/wambridge | [#250](https://github.com/travnie/wambridge/pull/250) | chore(deps): bump the actions group with 3 updates | @dependabot[bot] | gotowy | 2026-10-29 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Cytat z szuflady
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝Words are, of course, the most powerful drug used by mankind. — Rudyard Kipling❞</i>
+<i>❝Excellence is to do a common thing in an uncommon way. — Booker Washington❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
@@ -76,9 +75,9 @@
 
 <!--README_FEED:START-->
 - [Star History Monthly October 2026 | Execution](https://www.star-history.com/blog/execution)
-- [How Middle Powers Can Survive the AI Race](https://carnegieendowment.org/research/2026/10/ai-frontier-technology-middle-power-countries-four-scenarios)
-- [kanarek-companion created review 5675684185 on PR #370 in travnie/twojstar](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396936704#pullrequestreview-5675684185)
-- [claudiusz69 created review 5675663804 on PR #370 in travnie/twojstar](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396800093#pullrequestreview-5675663804)
-- [claudiusz69 commented on PR #370 in travnie/twojstar · comment 4395206564](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396798198#discussion_r4395206564)
-- [claudiusz69 created review 5675663446 on PR #370 in travnie/twojstar](https://github.com/travnie/twojstar/pull/370?feedseek_event=18396798017#pullrequestreview-5675663446)
+- [Product of the Day — Digital Electronic Cigarette](https://anycrap.shop/product/digital-electronic-cigarette)
+- [Dog Fact of the Day](https://dogapi.dog/)
+- [Joke of the Day](https://www.jokeindex.com/)
+- [Fortune Cookie of the Day](https://www.geckoandfly.com/16647/20-wise-chinese-fortune-cookie-sayings/)
+- [Life Hack of the Day](https://www.tumblr.com/1000-life-hacks)
 <!--README_FEED:END-->
