@@ -1,0 +1,38 @@
+---
+# One-off: copy GPTomek app credentials into trvny repos so their workflows can mint
+# installation tokens instead of using personal access tokens. Remove after it runs.
+name: Copy GPTomek key
+
+on: # yamllint disable-line rule:truthy
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  copy:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Create trvny secrets token
+        id: token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.GPTOMEK_APP_CLIENT_ID }}
+          private-key: ${{ secrets.GPTOMEK_APP_PRIVATE_KEY }}
+          owner: trvny
+          repositories: .github,trvny
+          permission-secrets: write
+
+      - name: Write secrets
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          CLIENT_ID: ${{ vars.GPTOMEK_APP_CLIENT_ID }}
+          PRIVATE_KEY: ${{ secrets.GPTOMEK_APP_PRIVATE_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for repo in trvny/.github trvny/trvny; do
+            printf '%s' "$CLIENT_ID" | gh secret set GPTOMEK_APP_CLIENT_ID -R "$repo"
+            printf '%s' "$PRIVATE_KEY" | gh secret set GPTOMEK_APP_PRIVATE_KEY -R "$repo"
+            echo "Updated $repo"
+          done
