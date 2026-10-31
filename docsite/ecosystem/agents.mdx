@@ -1,0 +1,26 @@
+---
+title: "Agent operators and Pet Dispatcher"
+description: "How the shared agent stack separates GitHub identity, review coordination, service routing, and confined development-machine work."
+sidebarTitle: "Agents & operations"
+---
+
+The operators have different trust and execution roles. They are not interchangeable bots with one giant token and a shared shell.
+
+| Component | Responsibility | Canonical guide |
+| --- | --- | --- |
+| GPTomek | GitHub App identity for bot-authored commits, comments, patches, reactions, and guarded branch changes | [GPTomek](https://github.com/trvny/trvny/blob/main/gh-apps/gptomek/README.md) |
+| Kanarek Companion | PR coordination, events, and shared Worker operator plumbing | [Companion](https://github.com/trvny/trvny/blob/main/gh-apps/kanarek-companion/README.md) |
+| Kanarek Review | Model/provider routing for automated review work | [Review](https://github.com/trvny/trvny/blob/main/gh-apps/kanarek-review/README.md) |
+| Pet Dispatcher | Workspace-confined MCP development-machine tools and an outbound-only remote control plane | [Dispatcher](https://github.com/trvny/trvny/blob/main/mcp/pet-dispatcher/README.md) |
+
+## Key boundaries
+
+**GPTomek** authors protected GitHub mutations; pull requests are normally opened by `trvny` so external reviews trigger. It is not a remote shell.
+
+**Pet Dispatcher** runs scoped workspace sessions, bounded filesystem/Git operations, and process-confined execution on an authorized machine. Its Cloudflare Queues transport does not broaden the local permission boundary.
+
+**Kanarek Review** and the Companion have separate responsibilities; their model routing, quip storage, and PR handling should not be inferred from the Android Kanarek news app.
+
+<Card title="Operational source of truth" icon="book-open" href="https://github.com/trvny/trvny">
+  Inspect current main-branch instructions and security docs before changing an operator.
+</Card>

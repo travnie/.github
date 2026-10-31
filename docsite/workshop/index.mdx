@@ -1,44 +1,45 @@
 ---
-title: "twojstar Workshop"
+title: "twojstar workshop"
 sidebarTitle: "Overview"
-description: "The shared home for Benches, Feedboard, Weather Feed, Xiaomi ADB Tools, and Paint.NET ICO, with one rolling release."
+description: "Browser tools, Windows utilities, AI/SpaceMolt tooling, pets, and creative plugins maintained together."
 ---
 
-`travnie/twojstar` is the shared workshop for small tools that are easier to maintain together than as a swarm of tiny repositories.
+[travnie/twojstar](https://github.com/travnie/twojstar) keeps small tools in one shared workshop rather than scattering a project per utility. Its root README and release manifest are the canonical inventory.
 
 <CardGroup cols={2}>
   <Card title="Benches" icon="flask" href="/workshop/benches">
-    Codebench, Docbench, and Streambench in one npm workspace.
+    Browser-first Codebench, Docbench, and Streambench.
   </Card>
-
+  <Card title="SpaceMolt SMX" icon="rocket" href="/workshop/spacemolt">
+    A safe, friendly companion to the official SpaceMolt v2 CLI.
+  </Card>
+  <Card title="Loopling" icon="smile" href="/workshop/loopling">
+    Procedural animated pet for ChatGPT and Codex.
+  </Card>
+  <Card title="Creative plugins" icon="palette" href="/workshop/addons">
+    Paint.NET ICO/AI effects and Audacity audio restoration.
+  </Card>
   <Card title="Feedboard" icon="rss" href="/workshop/feedboard">
-    A Windows 11 feed widget/provider with local-first storage and OPML support.
+    Windows 11 feed widget with local-first storage and OPML.
   </Card>
-
   <Card title="Weather Feed" icon="cloud-sun" href="/workshop/weather">
-    Multi-source weather, air quality, IMGW warnings, JSON state, and Atom changes.
+    Weather, air quality, IMGW warnings, JSON and Atom updates.
   </Card>
-
-  <Card title="Xiaomi ADB Tools" icon="mobile-screen" href="/workshop/xiaomi-adb-tools">
-    Maintained ADB/Fastboot desktop utility with modern JavaFX builds.
+  <Card title="Intent Keyboard" icon="keyboard" href="/workshop/intent-keyboard">
+    Multiplatform semantic input experiment.
   </Card>
-
+  <Card title="Xiaomi ADB Tools" icon="smartphone" href="/workshop/xiaomi-adb-tools">
+    Maintained desktop ADB/Fastboot utility.
+  </Card>
   <Card title="Paint.NET ICO" icon="image" href="/workshop/paintdotnet-ico">
-    ICO import/export plugin for Paint.NET 5.1 and 5.2+.
+    Multi-image ICO import/export and compatibility builds.
   </Card>
 </CardGroup>
 
 ## One rolling release
 
-The repository publishes one moving **Latest** release. Individual project workflows build and attest their artifacts; the central publisher assembles successful product bundles and updates the shared release.
+[Latest](https://github.com/travnie/twojstar/releases/latest) is the **repository-wide** bundle snapshot, not a separate version train per tool. Product CI builds relevant artifacts, and a shared publisher assembles the release before advancing Latest. Experiments such as Intent Keyboard are not automatically downloadable products.
 
-<Card title="Download Latest" icon="download" href="https://github.com/travnie/twojstar/releases/latest">
-  Current workshop bundles and checksums.
+<Card title="Latest bundles and checksums" icon="download" href="https://github.com/travnie/twojstar/releases/latest">
+  Review exact assets and the SHA256SUMS file before downloading.
 </Card>
-
-## Maintenance model
-
-- Dependabot covers the mixed stacks individually.
-- CodeQL uses GitHub default setup.
-- CI is path-filtered so unrelated projects do not rebuild unnecessarily.
-- Cloudflare-backed projects read from the repository's `main` branch.

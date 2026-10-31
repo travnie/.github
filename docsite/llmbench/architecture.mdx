@@ -1,10 +1,10 @@
 ---
-title: "LlmBench Kotlin Multiplatform Architecture"
-description: "Explore the shared KMP core, platform clients, and Compose-first UI strategy that power LlmBench across Android, with planned desktop and iOS support."
+title: "Aistee Kotlin Multiplatform Architecture"
+description: "Explore the shared KMP core, platform clients, and Compose-first UI strategy that power Aistee across Android, with planned desktop and iOS support."
 sidebarTitle: "Architecture"
 ---
 
-LlmBench is built as a Kotlin Multiplatform (KMP) workspace that separates shared domain logic from platform-specific clients. This architecture lets Android, desktop, and iOS clients reuse the same core while preserving native capabilities where they matter most.
+Aistee is built as a Kotlin Multiplatform (KMP) workspace that separates shared domain logic from platform-specific clients. This architecture lets Android, desktop, and iOS clients reuse the same core while preserving native capabilities where they matter most.
 
 ## Shared module
 
@@ -46,11 +46,11 @@ An iOS client will reuse the same shared core with platform-specific WebView and
 
 ## Backend strategy
 
-Backends are optional, not the default. LlmBench prefers client-side processing where possible. If a feature truly needs a backend, the project prefers a small stateless service and evaluates free tiers (Cloudflare, Google Cloud, AWS, Oracle) based on actual requirements rather than choosing infrastructure first.
+Backends are optional, not the default. Aistee prefers client-side processing where possible. If a feature truly needs a backend, a service is introduced only when server-side state or execution is genuinely required.
 
 ## UI strategy: Compose-first
 
-LlmBench uses Jetpack Compose as the primary UI toolkit. Shared UI moves into Compose Multiplatform only where it does not weaken:
+Aistee uses Jetpack Compose as the primary UI toolkit. Shared UI moves into Compose Multiplatform only where it does not weaken:
 
 - Native WebView behavior
 - File upload handling

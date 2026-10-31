@@ -1,47 +1,28 @@
 ---
-title: "Build and Run LlmBench on Android"
-description: "Open the LlmBench Kotlin Multiplatform project in Android Studio and build its Android app with the repository's current Java and SDK requirements."
+title: "Build Aistee for Android"
+description: "Build the current Aistee Android client with Android Studio, JDK 21, and SDK Platform 37."
 sidebarTitle: "Quickstart"
 ---
 
-LlmBench is a Kotlin Multiplatform workspace with Android as the first shipping client. The Android app has `minSdk 26`, `targetSdk 35`, and currently compiles against API 37 with Java 21.
+Aistee currently ships on **Android 8.0+ (API 26)**. The Android module compiles with SDK 37 and targets API 36; Java source/target compatibility is 21. Check [app/build.gradle.kts](https://github.com/travnie/aistee/blob/main/app/build.gradle.kts) before pinning future tooling.
 
 <Steps>
-  <Step title="Clone the repository">
-    ```bash
-    git clone https://github.com/travnie/llmbench.git
-    cd llmbench
-    ```
+  <Step title="Clone the renamed repository">
+    Run `git clone https://github.com/travnie/aistee.git` and enter the `aistee` directory.
   </Step>
-  <Step title="Open in Android Studio">
-    Open the repository root in a current Android Studio release and let Gradle import the `:app` and `:shared` modules.
+  <Step title="Configure Android Studio">
+    Open the repository root. Use JDK 21 for Gradle and install Android SDK Platform 37 when requested.
   </Step>
-  <Step title="Sync Gradle">
-    Install Android SDK Platform 37 if Android Studio asks for the compile SDK, then sync the project with JDK 21 selected for Gradle.
+  <Step title="Build debug APK">
+    Run `./gradlew :app:assembleDebug` (Windows: `gradlew.bat :app:assembleDebug`).
   </Step>
-  <Step title="Build the Android app">
-    ```bash
-    ./gradlew :app:assembleDebug
-    ```
-
-    On Windows PowerShell or Command Prompt, use `gradlew.bat :app:assembleDebug`.
-  </Step>
-  <Step title="Run on a device or emulator">
-    Connect a device running Android 8.0 / API 26 or newer, or start a compatible emulator, then run the `app` configuration from Android Studio.
+  <Step title="Run">
+    Use a device/emulator on API 26 or newer. The build output is under `app/build/outputs/apk/`.
   </Step>
 </Steps>
 
-<Note>
-  The UI remains Compose-first. Shared code lives in the Kotlin Multiplatform `shared` module, while Android keeps platform-native WebView, upload, authentication, and secure-storage behavior where needed.
-</Note>
+For ordinary use, [download the rolling signed APK](https://github.com/travnie/aistee/releases/download/aistee-latest/aistee.apk). For development rules, tests, and architecture see [the upstream README](https://github.com/travnie/aistee#development) and [documentation index](https://github.com/travnie/aistee/blob/main/docs/README.md).
 
-## Prerequisites
-
-- A current stable Android Studio
-- JDK 21
-- Android SDK Platform 37
-- An Android device or emulator on API 26 or newer
-
-## Verify your build
-
-A successful debug build creates the APK under the `app` module's build outputs. Running it should open LlmBench with its account-backed provider tabs and native chat/compare surfaces.
+<Warning>
+  An Aistee WebView login is not an API subscription or API credential. Provider auth requirements and limits still apply.
+</Warning>

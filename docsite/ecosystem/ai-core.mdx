@@ -1,0 +1,22 @@
+---
+title: "Portable AI core"
+description: "Canonical profiles, overlays, instructions, and skills from trvny/.ai, consumed by tools without vendoring duplicate copies."
+sidebarTitle: ".ai core"
+---
+
+[`trvny/.ai`](https://github.com/trvny/.ai) is the **canonical public AI configuration core**. It contains reusable profiles, schema, composition tools, instructions, templates, and opt-in skills.
+
+## Configuration model
+
+A downstream project pins the shared core and keeps its own local overlay. Later layers override earlier values; the resulting effective profile is schema-validated. This preserves a single maintained definition instead of copying instructions into every application.
+
+The repository's `AGENTS.md` is canonical guidance; `CLAUDE.md` and `GEMINI.md` are symlinks, not parallel documents.
+
+## Boundaries
+
+- Public core: portable, shareable files.
+- Project overlay: local, project-specific decisions.
+- Secrets and private paths: outside the public core and Git history.
+- Provider adapters: thin integrations where each consuming tool expects them.
+
+For exact composition commands, see the [submodule guide](https://github.com/trvny/.ai/blob/main/docs/submodule.md). For an application that consumes portable assets, see [Aistee profiles](/llmbench/profiles-and-instructions).

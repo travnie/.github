@@ -1,17 +1,17 @@
 ---
-title: "LlmBench AI Provider Support and WebViews"
-description: "Understand LlmBench account-backed WebViews, native provider transports, gateway adapters, and the current compatibility boundary."
+title: "Aistee AI Provider Support and WebViews"
+description: "Understand Aistee account-backed WebViews, native provider transports, gateway adapters, and the current compatibility boundary."
 sidebarTitle: "Providers"
 ---
 
-LlmBench combines account-backed provider WebViews with a native chat/compare layer. Provider-specific behavior stays behind bounded adapters instead of leaking across the UI.
+Aistee combines account-backed provider WebViews with a native chat/compare layer. Provider-specific behavior stays behind bounded adapters instead of leaking across the UI.
 
 ## Account-backed WebViews
 
 The current Android client includes WebView entries for ChatGPT, Claude, Gemini, DeepSeek, Kimi, Mistral Vibe, Qwen, Microsoft Copilot, Z.ai, Grok, Character.AI, Venice, and Meta AI.
 
 <Warning>
-  "Integrated" does not guarantee that every provider permits fresh embedded sign-in. Authentication remains between the provider page and that provider, and LlmBench does not scrape passwords, cookies, OAuth tokens, or page contents.
+  "Integrated" does not guarantee that every provider permits fresh embedded sign-in. Authentication remains between the provider page and that provider, and Aistee does not scrape passwords, cookies, OAuth tokens, or page contents.
 </Warning>
 
 | Provider | Status | Uploads | Activity tracking | Notes |
@@ -32,7 +32,7 @@ The current Android client includes WebView entries for ChatGPT, Claude, Gemini,
 
 ## Native and free-provider layer
 
-The native chat layer is already implemented, not merely planned:
+The native chat layer is already implemented, not merely planned (catalog and authentication boundaries are documented upstream):
 
 - **Gemini** through `generateContent` REST with streaming support.
 - **OpenAI** through the Responses API with `store=false` and bounded visible-text replay.
@@ -40,7 +40,7 @@ The native chat layer is already implemented, not merely planned:
 - **OpenRouter Free** through the shared OpenAI-compatible gateway adapter.
 - **AIHubMix Free** through the same gateway boundary.
 
-The two gateway aggregators stay outside the default All Models comparison so the same underlying model is not routed twice.
+OpenRouter Free and AIHubMix are aggregator routes and stay outside the default All Models comparison so the same underlying model is not routed twice. The current app also supports Vercel AI Gateway with a live text-model catalog, and an eligible separately authorized ChatGPT account-plan route; neither makes a consumer WebView login an API key.
 
 ## Provider tweaks and diagnostics
 
@@ -53,4 +53,6 @@ Diagnostics expose only privacy-safe integration metadata such as provider host,
 
 ## Gemini and embedded Google sign-in
 
-Gemini Chat is integrated, but Google may reject OAuth flows from embedded user-agents. That is a provider policy boundary, not something LlmBench attempts to bypass.
+Gemini Chat is integrated, but Google may reject OAuth flows from embedded user-agents. That is a provider policy boundary, not something Aistee attempts to bypass.
+
+For precise current transport and account-plan constraints, see [Aistee provider runtime](https://github.com/travnie/aistee/blob/main/docs/provider-runtime.md) and [provider capability research](https://github.com/travnie/aistee/blob/main/docs/provider-capability-research.md).
