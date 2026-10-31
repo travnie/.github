@@ -1,58 +1,25 @@
 ---
-title: "LlmBench Profiles, Instructions, and AI Skills"
-description: "Understand LlmBench profile and instruction tooling, its relationship to trvny/.ai, and the boundary for future portable configuration integration."
-sidebarTitle: "Profiles"
+title: "Aistee profiles, instructions, and skills"
+description: "Understand Aistee's local AI workspace and how it relates to the portable trvny/.ai configuration core."
+sidebarTitle: "Profiles & Skills"
 ---
 
-LlmBench includes profile, instruction, YAML, and skills/docs tooling. The separate `trvny/.ai` repository remains the canonical portable configuration project, but LlmBench does not currently perform automatic runtime synchronization with it.
+Aistee provides local profiles, prompts, Library assets, and an explicit skills runtime. The portable [trvny/.ai](https://github.com/trvny/.ai) repository remains the canonical home for reusable cross-client profiles, instructions, and skills.
 
-## Relationship to `.ai`
+## Two different responsibilities
 
-The `trvny/.ai` repository remains the canonical portable AI configuration core. LlmBench contains the multiplatform client code; `trvny/.ai` contains the reusable AI configuration you can bring into any compatible client.
+| Project | Owns |
+| --- | --- |
+| [Aistee](https://github.com/travnie/aistee) | Android/KMP client, local projects, provider sessions, profile editing, tool execution, and security UI |
+| [trvny/.ai](https://github.com/trvny/.ai) | Portable reusable AI configuration, composition tools, schema, instructions, and skill definitions |
 
-```text
-trvny/.ai             reusable profiles / instructions / skills
-      │
-      └── optional consumption
-              │
-              ▼
-travnie/llmbench      shared KMP core + platform clients
-```
+Copying the entire `.ai` tree into the app would create competing sources of truth. Portable assets should cross the boundary through an explicit import, pinned revision, or exported representation.
 
-<Warning>
-  Do not vendor a second copy of `.ai` into LlmBench. If runtime integration becomes useful, consume a pinned or exported representation with an explicit boundary rather than duplicating content.
-</Warning>
+## Safety and portability
 
-## What profiles and instructions contain
+- Skills require explicit trust before sensitive operations.
+- Provider web sessions, native API keys, and local project data are different storage and authorization domains.
+- Keep private overlays, credentials, and machine-specific values outside the public `.ai` core.
+- Treat file handling, imports/exports, and prompt-injection boundaries as product features, not incidental implementation details.
 
-The `.ai` project defines portable, reusable AI configuration that can include:
-
-<CardGroup>
-  <Card title="Profiles" icon="user">
-    Named configurations that describe how a model or assistant should behave, including system instructions and parameter defaults.
-  </Card>
-
-  <Card title="Instructions" icon="file-lines">
-    Specific prompts or prompt templates that can be reused across conversations or providers.
-  </Card>
-
-  <Card title="Skills" icon="wrench">
-    Domain-specific capabilities and workflows defined as portable configuration.
-  </Card>
-</CardGroup>
-
-## Runtime integration status
-
-Automatic runtime consumption of `trvny/.ai` is **not implemented yet**. The current app owns its local profile/instruction state and tooling. If cross-repository runtime integration is added later, it should consume an explicitly pinned or exported representation so releases remain reproducible and the boundary stays auditable.
-
-## Skills and docs browser
-
-The first LlmBench prototype includes a small skills/docs browser that lets you:
-
-- Browse the profiles and instructions available to the app
-- View YAML definitions
-- Apply configurations to conversations
-
-<Note>
-  This browser is part of the early prototype and will evolve as the `.ai` integration matures.
-</Note>
+For implemented behavior and permission checks, use [Aistee skills runtime](https://github.com/travnie/aistee/blob/main/docs/skills-runtime.md). For portable profile composition, see [the .ai submodule guide](https://github.com/trvny/.ai/blob/main/docs/submodule.md).

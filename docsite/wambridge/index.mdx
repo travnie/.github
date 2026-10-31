@@ -9,7 +9,7 @@ WAM Bridge is a Windows-first Python bridge that lets you stream audio from your
 Everything here was measured against a physical SPK-WAM550 running firmware `WAM550WWB-3117.1`. Other models in the Samsung WAM family are untested.
 
 <Warning>
-  WAM Bridge is alpha software built by one person against one speaker. It works, but it is not polished. Read the latency note below before you install.
+  WAM Bridge is alpha software built by one person against one speaker. The CLI has hardware validation, but the later foobar2000 full-track recheck did not reproduce the older stability results. Read the test status and limitations before installing.
 </Warning>
 
 ## What works
@@ -20,7 +20,7 @@ Everything here was measured against a physical SPK-WAM550 running firmware `WAM
   </Card>
 
   <Card title="Foobar2000 Output" icon="music">
-    `f32le` PCM from foobar encoded to FLAC, served over local HTTP to the speaker. Validated on a physical M5 on 2026-08-02.
+    `f32le` PCM from foobar encoded to FLAC, served over local HTTP to the speaker. Passed the physical M5 checklist on 2026-08-02; stability was not reproduced in a later 2026-10-21 recheck.
   </Card>
 
   <Card title="Remote Control" icon="sliders">
@@ -36,7 +36,15 @@ Everything here was measured against a physical SPK-WAM550 running firmware `WAM
 
 The last measured end-to-end FLAC latency was 6.7 seconds (historical figure, measured before the host buffer was reduced). With `buffer_extra=0`, the host queue is approximately 1.9 seconds. A fresh ear-to-clock measurement has not been taken yet, so the 6.7 s figure is outdated rather than current.
 
-Playback runs at wall-clock speed and the seekbar is honest. Pause, stop, and skip still carry PCM pipeline latency because they act through the PCM path. Setting `hardware_volume=1` routes the volume slider directly to the speaker for lower-latency volume control.
+Earlier clean runs showed a correct host clock and seekbar, but they do not establish uninterrupted speaker playback on the current network link. Pause, stop, and skip still carry PCM pipeline latency because they act through the PCM path. Setting `hardware_volume=1` routes the volume slider directly to the speaker for lower-latency volume control.
+
+## Hardware compatibility and validation
+
+The only speaker physically validated here is **SPK-WAM550**, firmware `WAM550WWB-3117.1`. Shape M3/M7, WAM551, R1, and some Samsung Multiroom soundbars share API evidence, **not a successful WAM Bridge playback test**. A `SetUrlPlayback` success response cannot verify audible output, timing, controls, or model-specific volume scales.
+
+The full M5 checklist passed on **2026-08-02**; a **2026-10-21** full-track recheck did **not** reproduce that stability on the then-current setup. Treat the earlier result as historical, not a current universal guarantee.
+
+See the [model compatibility evidence and acceptance criteria](https://github.com/travnie/wambridge#speaker-compatibility) and the [latest physical status](https://github.com/travnie/wambridge/blob/main/foobar/README.md#physical-m5-checklist).
 
 ## Requirements
 

@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "luma",
   "name": "twojstar",
-  "description": "Documentation hub for twojstar and trvny projects: Android apps, feeds, media tools, Windows utilities, and shared workshop projects.",
+  "description": "Documentation for travnie and trvny apps, AI tools, feeds, media, and the shared twojstar workshop.",
   "colors": {
     "primary": "#6366f1",
     "light": "#818cf8",
@@ -77,7 +77,7 @@
         ]
       },
       {
-        "tab": "LlmBench",
+        "tab": "Aistee",
         "icon": "bot",
         "groups": [
           {
@@ -186,7 +186,25 @@
               "workshop/feedboard",
               "workshop/weather",
               "workshop/xiaomi-adb-tools",
-              "workshop/paintdotnet-ico"
+              "workshop/paintdotnet-ico",
+              "workshop/spacemolt",
+              "workshop/loopling",
+              "workshop/addons",
+              "workshop/intent-keyboard"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI & Agents",
+        "icon": "network",
+        "groups": [
+          {
+            "group": "Shared tooling",
+            "pages": [
+              "ecosystem/index",
+              "ecosystem/ai-core",
+              "ecosystem/agents"
             ]
           }
         ]

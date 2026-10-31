@@ -1,0 +1,28 @@
+---
+title: "SpaceMolt SMX"
+description: "SMX wraps the official SpaceMolt v2 CLI with profiles, safe shortcuts, fleet checks, and MCP presets."
+sidebarTitle: "SpaceMolt SMX"
+---
+
+[SMX](https://github.com/travnie/twojstar/tree/main/spacemolt/smx) is a lightweight Python companion for the official [SpaceMolt v2 client](https://github.com/SpaceMolt/client-v2). The official binary stays authoritative for API contracts, authentication, sessions, and game mechanics.
+
+## What SMX adds
+
+- Aliases, typo suggestions without automatic execution, and passthrough to the official v2 commands.
+- `nearby`, `sell-all --dry-run`, mission views, tactical cards, and read-only `watch`.
+- Isolated profiles and fleet checks for multiple players or agents.
+- Verified managed-backend updates and separate docs/gameplay MCP presets.
+
+## Start
+
+Requirements: **Python 3.14+**. From `travnie/twojstar/spacemolt/smx`, run the appropriate installer: `./install.ps1` on Windows PowerShell or `./install.sh` on Linux/macOS. Open a new terminal and run `smx paths`, `smx doctor`, and `smx status`.
+
+Use `smx mcp docs` for development reference and `smx mcp gameplay` for the full game preset. They serve different purposes.
+
+<Warning>
+  Keep session JSON and credentials outside Git. Windows state defaults to `%LOCALAPPDATA%\smx`; concurrent profiles get distinct session files. SMX does not silently rewrite the official client's shared active account.
+</Warning>
+
+<Card title="Authoritative SMX reference" icon="book-open" href="https://github.com/travnie/twojstar/blob/main/spacemolt/smx/README.md">
+  Installers, commands, profile behavior, and requirements.
+</Card>
