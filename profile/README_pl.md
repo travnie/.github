@@ -57,32 +57,26 @@
 <!--OPEN_PRS:START-->
 | Repozytorium | PR | Tytuł | Autor | Stan | Aktualizacja |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#445](https://github.com/travnie/aistee/pull/445) | deps: bump org.mozilla:rhino from 1.9.1 to 1.9.2 in the gradle-minor-patch group | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#382](https://github.com/travnie/twojstar/pull/382) | build(deps-dev): bump wrangler from 4.151.3 to 4.155.0 in /spacemolt/gateway in the spacemolt-gateway group | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#383](https://github.com/travnie/twojstar/pull/383) | build(deps-dev): bump the weather group in /weather-feed with 2 updates | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#384](https://github.com/travnie/twojstar/pull/384) | build(deps): bump the intent-keyboard group in /intent-keyboard with 2 updates | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#385](https://github.com/travnie/twojstar/pull/385) | build(deps): update anthropic requirement from >=2.0.0 to >=2.3.0 in /plugins/claude-dev-kit/skills/mcp-builder/scripts in the plugin-requirements group across 1 directory | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#386](https://github.com/travnie/twojstar/pull/386) | build(deps): bump the benches group in /benches with 3 updates | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#387](https://github.com/travnie/twojstar/pull/387) | Bump the dotnet group with 2 updates | @dependabot[bot] | gotowy | 2026-10-31 |
-| travnie/twojstar | [#388](https://github.com/travnie/twojstar/pull/388) | build(deps): bump the actions group with 3 updates | @dependabot[bot] | gotowy | 2026-10-31 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | wersja robocza | 2026-10-24 |
+| travnie/wambridge | [#255](https://github.com/travnie/wambridge/pull/255) | build(android): enable optimized R8 for release APKs | @trvny | gotowy | 2026-11-01 |
+| travnie/wambridge | [#256](https://github.com/travnie/wambridge/pull/256) | fix(android): keep DLNA SSDP visible and reject unsupported seek | @trvny | gotowy | 2026-11-01 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Cytat z szuflady
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝To the people that have said I'm too small, I'm not fast enough, I don't have what it takes, I'm not strong enough. THANK YOU. — Muhammad Ali❞</i>
+<i>❝The first electronic computer ENIAC weighed more than 27 tons and took up 1800 square feet.❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 Ostatnio na antenie
 
 <!--README_FEED:START-->
-- [List do redakcji w sprawie masztu przy Wilczej: Mieszkańcy pytają o bezpieczeństwo i ład przestrzenny - jaw.pl](https://news.google.com/atom/articles/CBMiakFVX3lxTE9xSnExYml4LU9INmxrQnNOZ0QwNS1YLTdJMGFtRkp0dVBIMFlLVDI2anhfQXR6cmNXVlYzUHNMT253MHE0SG81eXhVRzVVZGdETm5RRW5MeDhpMkNJNFVEMWNqRTR3TFVzZ3c?oc=5)
-- [Russia’s Shadow Fleet Turns to Nets and Rubber Tires for Makeshift Drone Armor](https://www.wsj.com/world/russias-shadow-fleet-turns-to-nets-and-rubber-tires-for-makeshift-drone-armor-95e817a1)
-- [The Slate vs Ford Fathom debate might be settled by this one key tech feature](https://www.engadget.com/2300238/slate-vs-ford-fathom-android-auto-carplay-support/)
-- [What the Cameras Saw | Post Mortem](https://www.cbsnews.com/video/103126-48-hours-post-mortem-episode-2/)
-- [U.S. plans to deport Afghans back to their home country through Pakistan, documents show](https://abcnews.com/US/wireStory/us-plans-deport-afghans-back-home-country-pakistan-137741097)
-- [Judge ends Trump's attempts to sue Wall Street Journal over Epstein reporting](https://www.reuters.com/world/us-judge-dismisses-trumps-lawsuit-against-wall-street-journal-with-prejudice-2026-10-31/)
+- [Flash floods trigger evacuations in Arizona and Colorado amid heavy rains in southwest](https://abcnews.com/US/wireStory/flash-floods-trigger-evacuations-arizona-colorado-amid-heavy-137753110)
+- [CBS News adds South Carolina as battleground state; still Leans Republican](https://www.cbsnews.com/video/cbs-news-adds-south-carolina-as-battleground-state-still-leans-republican/)
+- [Transcript: David Becker on "Face the Nation with Margaret Brennan," Nov. 1, 2026](https://www.cbsnews.com/news/david-becker-election-law-face-the-nation-transcript-11-01-2026/)
+- [Transcript: Pennsylvania Gov. Josh Shapiro on "Face the Nation with Margaret Brennan," Nov. 1, 2026](https://www.cbsnews.com/news/josh-shapiro-pennsylvania-governor-11-01-2026/)
+- [Transcript: Rep. Mike Lawler on "Face the Nation with Margaret Brennan," Nov. 1, 2026](https://www.cbsnews.com/news/mike-lawler-new-york-republican-face-the-nation-transcript-11-01-2026/)
+- [UK was ‘vehement’ slavery reparations should not be on Commonwealth summit agenda](https://www.theguardian.com/world/2026/nov/01/uk-was-vehement-slavery-reparations-should-not-be-on-commonwealth-summit-agenda)
 <!--README_FEED:END-->
