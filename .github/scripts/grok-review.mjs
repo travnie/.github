@@ -62,7 +62,7 @@ function addedLines(patch) {
     const hunk = row.match(/^@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@/);
     if (hunk) {
       cursor = Number(hunk[1]);
-    } else if (row.startsWith('+++') || row.startsWith('---') || row.startsWith('\\')) {
+    } else if (row.startsWith('\\')) {
       continue;
     } else if (row.startsWith('+')) {
       result.add(cursor++);
@@ -81,16 +81,18 @@ async function changedFiles() {
     if (batch.length < 100) break;
   }
   let remaining = maxDiffChars;
+  let truncated = false;
   const files = [];
   for (const item of found) {
     if (files.length >= maxFiles || remaining <= 0) break;
     if (typeof item.filename !== 'string' || typeof item.patch !== 'string') continue;
     const patch = item.patch.slice(0, Math.min(remaining, 12_000));
+    if (patch.length < item.patch.length) truncated = true;
     if (!patch) continue;
     files.push({ path: item.filename, patch, lines: addedLines(patch) });
     remaining -= patch.length;
   }
-  return { files, total: found.length, complete: found.length < 300 && found.length <= files.length };
+  return { files, total: found.length, complete: !truncated && found.length < 300 && found.length === files.length };
 }
 
 function responseText(result) {
