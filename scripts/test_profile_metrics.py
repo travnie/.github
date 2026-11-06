@@ -34,6 +34,18 @@ class ProfileMetricsTests(unittest.TestCase):
         with patch.object(metrics, "api", side_effect=fake_api):
             self.assertEqual(metrics.repository_sizes(), (3072, 2))
 
+    def test_github_host_is_fixed(self):
+        with patch.object(metrics.http.client, "HTTPSConnection") as constructor:
+            fake = constructor.return_value
+            fake.getresponse.return_value.status = 200
+            fake.getresponse.return_value.read.return_value = b'{"total_count": 5}'
+            self.assertEqual(metrics.api("/search/issues?q=x&per_page=1")["total_count"], 5)
+            constructor.assert_called_once_with("api.github.com", timeout=20)
+
+    def test_api_path_allowlist(self):
+        with self.assertRaises(ValueError):
+            metrics.api("//evil.example/path")
+
     def test_endpoint_schema(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(metrics, "OUT", Path(tmp)):
             metrics.badge("pr.json", "merged PRs", "46", "8250df", "pr")

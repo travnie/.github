@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Public GitHub statistics for the organization profile."""
 
+import http.client
 import json
 import os
 import sys
 import urllib.parse
-import urllib.request
 from pathlib import Path
 
 OWNERS = (("user", "trvny"), ("org", "travnie"))
@@ -13,22 +13,29 @@ OUT = Path("assets/profile/metrics")
 UA = "travnie-profile-metrics"
 
 
-def fetch(url, auth=False):
-    headers = {"User-Agent": UA}
-    if auth:
-        headers["Accept"] = "application/vnd.github+json"
-        headers["X-GitHub-Api-Version"] = "2022-11-28"
-        if os.environ.get("GITHUB_TOKEN"):
-            headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
-    with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=20) as response:
+def api(path):
+    if not path.startswith(("/search/issues?", "/users/trvny/repos?", "/orgs/travnie/repos?")):
+        raise ValueError("unexpected GitHub API path")
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": UA,
+    }
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = "Bearer " + token
+    connection = http.client.HTTPSConnection("api.github.com", timeout=20)
+    try:
+        connection.request("GET", path, headers=headers)
+        response = connection.getresponse()
+        if response.status != 200:
+            raise ValueError(f"GitHub API returned HTTP {response.status}")
         data = response.read(3_000_001)
         if len(data) > 3_000_000:
             raise ValueError("response too large")
-        return data
-
-
-def api(path):
-    return json.loads(fetch("https://api.github.com" + path, auth=True))
+        return json.loads(data)
+    finally:
+        connection.close()
 
 
 def merged_pr_count():
