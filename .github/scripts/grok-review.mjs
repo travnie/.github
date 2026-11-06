@@ -212,8 +212,13 @@ if (await previousReview(currentSha)) {
 
 const summary = generated.summary.trim().slice(0, 800);
 const disclaimer = complete ? '' : '\n\n_Partial review: the diff exceeded the bounded input window._';
+const runId = process.env.GITHUB_RUN_ID || '';
+const runUrl = /^[0-9]+$/.test(runId)
+  ? 'https://github.com/travnie/.github/actions/runs/' + runId
+  : 'https://github.com/travnie/.github/actions/workflows/grok-review.yml';
+const badge = '[![Grok 4.7 review](https://img.shields.io/badge/Grok_4.7-code_review-2463eb?style=flat-square&logo=xai&logoColor=white)](' + runUrl + ')';
 const body = markerPrefix + currentSha + ' -->\n' +
-  '### 🧠 Grok 4.7 · independent code review\n\n' +
+  badge + '\n\n### 🧠 Grok 4.7 · independent code review\n\n' +
   (findings.length ? findings.join('\n\n') : (summary || 'No high-confidence issues found.')) +
   disclaimer;
 await github(apiBase + '/pulls/' + number + '/reviews', 'POST',
