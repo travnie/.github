@@ -5,16 +5,16 @@ on: # yamllint disable-line rule:truthy
     branches: [main]
     paths:
       - .github/workflows/profile-metrics.yml
-      - scripts/update_profile_metrics.py
-      - scripts/test_profile_metrics.py
+      - scripts/profile-badges.cjs
+      - scripts/profile-badges.test.cjs
       - profile/README.md
       - profile/README_pl.md
       - profile/README_zh.md
   pull_request:
     paths:
       - .github/workflows/profile-metrics.yml
-      - scripts/update_profile_metrics.py
-      - scripts/test_profile_metrics.py
+      - scripts/profile-badges.cjs
+      - scripts/profile-badges.test.cjs
       - profile/README.md
       - profile/README_pl.md
       - profile/README_zh.md
@@ -36,10 +36,8 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7
-      - name: Validate generator
-        run: |
-          python3 -m py_compile scripts/update_profile_metrics.py
-          python3 -m unittest discover -s scripts -p 'test_profile_metrics.py' -v
+      - name: Validate profile badges
+        run: node --test scripts/profile-badges.test.cjs
 
   refresh:
     if: github.event_name != 'pull_request' && github.repository == 'travnie/.github'
@@ -54,9 +52,12 @@ jobs:
 
 
       - name: Generate merged PRs and public repository size
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: python3 scripts/update_profile_metrics.py
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const run = require("./scripts/profile-badges.cjs");
+            await run({ github, core });
 
       - name: Publish source data
         run: |
