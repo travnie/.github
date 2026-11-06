@@ -1,0 +1,78 @@
+name: Grok central PR review
+
+on: # yamllint disable-line rule:truthy
+  repository_dispatch:
+    types: [grok-pr-review]
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Target owner/repo
+        required: true
+        type: string
+      number:
+        description: Pull request number
+        required: true
+        type: number
+  pull_request:
+    paths:
+      - .github/workflows/grok-review.yml
+      - .github/scripts/grok-review.mjs
+
+permissions:
+  contents: read
+
+concurrency:
+  group: grok-review-${{ github.event.client_payload.repository || inputs.repository || github.event.pull_request.number }}-${{ github.event.client_payload.number || inputs.number || github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  syntax:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate central reviewer
+        run: node --check .github/scripts/grok-review.mjs
+
+  review:
+    if: github.event_name == 'repository_dispatch' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate target
+        id: target
+        shell: bash
+        env:
+          TARGET_REPOSITORY: ${{ github.event.client_payload.repository || inputs.repository }}
+          TARGET_NUMBER: ${{ github.event.client_payload.number || inputs.number }}
+          EXPECTED_HEAD_SHA: ${{ github.event.client_payload.head_sha || '' }}
+        run: |
+          set -euo pipefail
+          [[ "$TARGET_REPOSITORY" =~ ^(trvny|travnie)/[A-Za-z0-9_.-]+$ ]] || exit 2
+          [[ "$TARGET_NUMBER" =~ ^[1-9][0-9]*$ ]] || exit 2
+          [[ -z "$EXPECTED_HEAD_SHA" || "$EXPECTED_HEAD_SHA" =~ ^[0-9a-fA-F]{40}$ ]] || exit 2
+          echo "owner=${TARGET_REPOSITORY%%/*}" >> "$GITHUB_OUTPUT"
+          echo "repo=${TARGET_REPOSITORY#*/}" >> "$GITHUB_OUTPUT"
+      - name: Get GPTomek installation token
+        id: auth
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.GPTOMEK_APP_CLIENT_ID }}
+          private-key: ${{ secrets.GPTOMEK_APP_PRIVATE_KEY }}
+          owner: ${{ steps.target.outputs.owner }}
+          repositories: ${{ steps.target.outputs.repo }}
+          permission-pull-requests: write
+          permission-contents: read
+      - name: Review PR with Grok
+        env:
+          TARGET_REPOSITORY: ${{ github.event.client_payload.repository || inputs.repository }}
+          TARGET_NUMBER: ${{ github.event.client_payload.number || inputs.number }}
+          EXPECTED_HEAD_SHA: ${{ github.event.client_payload.head_sha || '' }}
+          GROK_GH_TOKEN: ${{ steps.auth.outputs.token }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: node .github/scripts/grok-review.mjs
