@@ -14,3 +14,5 @@ RSS source list extracted from the default `README_FEED_URLS` entries in [upkeep
 Cards: RSS; public activity + random public code + mildly interesting habits; lines in terminal template. Badge values: [merged PRs](../assets/profile/metrics/merged-prs.json), [repository size](../assets/profile/metrics/repo-size.json). Generated SVGs and JSON belong to this workflow. No manual edits.
 
 For activity, code, habits, and lines, add a repository/org secret `METRICS_TOKEN` with read access to the public organization metadata (`read:org`) and public repository data. Existing `GH_PAT` may be used instead. Without either secret, RSS and badges still refresh; the GitHub-backed cards are skipped (first run: setup placeholder SVG, later runs: last generated card retained). The built-in `GITHUB_TOKEN` is not a substitute for organization-wide Metrics API access.
+
+**Partial outages:** the generator deliberately publishes cached values or explicit unavailable badges and logs `::warning::` on per-source failures. The workflow may stay green while one upstream source is unavailable; the other sources and cards continue refreshing. GitHub Actions logs are the diagnostic record.
