@@ -5,7 +5,7 @@
 
 ## [Licenses](LICENSE)
 
-[![code license](https://img.shields.io/github/license/trvny/.github?label=code&logo=opensourceinitiative&logoColor=white&color=6f42c1&style=flat-square)](https://spdx.org/licenses/ISC) [![content license](https://img.shields.io/badge/content-CC_BY_4.0-2b579a?style=flat-square&logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by/4.0)
+[![ISC](https://img.shields.io/github/license/trvny/.github?label=code&logo=opensourceinitiative&logoColor=white&color=6f42c1&style=flat-square)](https://spdx.org/licenses/ISC) [![CC](https://img.shields.io/badge/content-CC_BY_4.0-2b579a?style=flat-square&logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by/4.0)
 
 Code, workflows, and configuration are licensed under [ISC](LICENSE).  
 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"> Original content, documentation, and graphics are available under [CC BY 4.0](docs/LICENSE.CC_BY_4.0).
