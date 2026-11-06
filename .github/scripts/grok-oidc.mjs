@@ -30,10 +30,10 @@ const exchange = await fetch(audience, {
   body: JSON.stringify({ repository }),
   signal: AbortSignal.timeout(30_000),
 });
-if (!exchange.ok) throw new Error('gptomek_exchange_failed:' + exchange.status);
+if (!exchange.ok) throw new Error('review_bot_exchange_failed:' + exchange.status);
 const data = await exchange.json();
 if (typeof data.token !== 'string' || !data.token.startsWith('ghs_')) {
-  throw new Error('invalid_gptomek_exchange_response');
+  throw new Error('invalid_review_bot_exchange_response');
 }
 
 console.log('::add-mask::' + data.token);
