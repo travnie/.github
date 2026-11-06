@@ -1,7 +1,7 @@
 {
   "model": "grok-4.7",
   "reasoningEffort": "medium",
-  "maxOutputTokens": 4096,
+  "maxOutputTokens": 65536,
   "maxFiles": 30,
   "maxDiffChars": 60000,
   "maxPerFileChars": 12000,
