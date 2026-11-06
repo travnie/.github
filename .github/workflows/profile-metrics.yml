@@ -82,7 +82,7 @@ jobs:
             echo '::warning::Set METRICS_TOKEN or GH_PAT to enable organization activity and lines'
           fi
 
-      - name: RSS: JBZD via Feedseek
+      - name: "RSS: JBZD via Feedseek"
         uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest/v3.34
         with:
           user: travnie
