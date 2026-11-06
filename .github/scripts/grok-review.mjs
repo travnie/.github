@@ -194,7 +194,28 @@ const response = await fetch('https://api.x.ai/v1/responses', {
   }),
   signal: AbortSignal.timeout(660_000),
 });
-if (!response.ok) throw new Error('xai_request_failed:' + response.status);
+if (!response.ok) {
+  const payload = await response.json().catch(() => null);
+  const error = payload?.error && typeof payload.error === 'object' ? payload.error : {};
+  const safeCode = (value) => typeof value === 'string' && /^[a-zA-Z0-9_.-]{1,64}$/.test(value)
+    ? value : null;
+  const rawMessage = typeof error.message === 'string' ? error.message :
+    typeof payload?.message === 'string' ? payload.message : '';
+  const category = /credit|balance|billing|payment|insufficient|quota/i.test(rawMessage)
+    ? 'account_quota_or_billing'
+    : /rate.limit|too.many|throttl|capacity/i.test(rawMessage)
+      ? 'rate_limit_or_capacity'
+      : 'unspecified';
+  console.error(JSON.stringify({
+    xai: 'http_error',
+    status: response.status,
+    code: safeCode(error.code ?? payload?.code),
+    type: safeCode(error.type ?? payload?.type),
+    category,
+    retryAfter: safeCode(response.headers.get('retry-after')),
+  }));
+  throw new Error('xai_request_failed:' + response.status);
+}
 const raw = await response.json();
 if (raw.status !== 'completed') throw new Error('xai_response_incomplete');
 const generated = parseReview(responseText(raw));
