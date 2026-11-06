@@ -43,7 +43,7 @@
 ### :bar_chart: Workshop telemetry
 
 <p align="center">
-  <a href="../assets/profile/metrics/upkeep.xml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/rss.svg" alt="Latest RSS articles from upkeep sources" width="650"></a>
+  <a href="https://github.com/trvny/feedseek/blob/main/feeds/feed_jbzd.xml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/rss.svg" alt="Latest JBZD posts via Feedseek" width="650"></a>
   <a href="../.github/workflows/profile-metrics.yml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/activity.svg" alt="Public GitHub activity, code samples and mildly interesting coding habits" width="650"></a>
   <a href="https://github.com/lowlighter/metrics/blob/master/source/plugins/lines/README.md"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/lines.svg" alt="Lines changed in the terminal layout" width="650"></a>
 </p>
