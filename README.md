@@ -5,9 +5,9 @@
 
 ## CI and review automation
 
-[![Grok review](https://img.shields.io/github/actions/workflow/status/travnie/.github/grok-review.yml?branch=main&label=Grok%20review&logo=xai&logoColor=white&style=flat-square)](https://github.com/travnie/.github/actions/workflows/grok-review.yml)
+[![Grok](https://raw.githubusercontent.com/travnie/.github/main/assets/badges/grok.svg)](.github/actions/grok-review) [![Grok review](https://img.shields.io/github/actions/workflow/status/travnie/.github/grok-review.yml?branch=main&label=Grok%20review&logo=xai&logoColor=white&style=flat-square)](https://github.com/travnie/.github/actions/workflows/grok-review.yml)
 
-One [central Grok 4.7 review workflow](.github/workflows/grok-review.yml) serves PRs in `trvny/*` and `travnie/*` through verified GitHub App events. The badge reports the central workflow's status, **not** an individual repository's review result. Published reviews link their own Actions run.
+The [central Grok composite Action](.github/actions/grok-review) serves PRs in `trvny/*` and `travnie/*` through verified GitHub App events. The live status badge describes the central workflow, **not** an individual repository's review result. Each published review uses the canonical Grok SVG above, linked to its own Actions run.
 
 ## [Licenses](LICENSE)
 
