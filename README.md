@@ -5,9 +5,9 @@
 
 ## CI and review automation
 
-[![Grok](https://raw.githubusercontent.com/travnie/.github/main/assets/badges/grok.svg)](.github/actions/grok-review) [![Grok review](https://img.shields.io/github/actions/workflow/status/travnie/.github/grok-review.yml?branch=main&label=Grok%20review&logo=xai&logoColor=white&style=flat-square)](https://github.com/travnie/.github/actions/workflows/grok-review.yml)
+[![Grok](https://raw.githubusercontent.com/travnie/.github/main/assets/badges/grok.svg)](https://github.com/trvny/trvny/tree/main/gh-apps/kanarek-review)
 
-The [central Grok composite Action](.github/actions/grok-review) serves PRs in `trvny/*` and `travnie/*` through verified GitHub App events. The live status badge describes the central workflow, **not** an individual repository's review result. Each published review uses the canonical Grok SVG above, linked to its own Actions run.
+Grok 4.7 is part of the [Kanarek paid review pool](https://github.com/trvny/trvny/tree/main/gh-apps/kanarek-review), after the free-model sweep. Kanarek owns review dispatch, source-line verification, provider cooldowns, and GitHub publication. No separate Grok Actions workflow or per-repository configuration is needed.
 
 ## [Licenses](LICENSE)
 
