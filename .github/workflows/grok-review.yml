@@ -17,6 +17,7 @@ on: # yamllint disable-line rule:truthy
     paths:
       - .github/workflows/grok-review.yml
       - .github/scripts/grok-review.mjs
+      - .github/scripts/grok-oidc.mjs
 
 permissions:
   contents: read
@@ -34,10 +35,13 @@ jobs:
         with:
           persist-credentials: false
       - name: Validate central reviewer
-        run: node --check .github/scripts/grok-review.mjs
+        run: node --check .github/scripts/grok-review.mjs && node --check .github/scripts/grok-oidc.mjs
 
   review:
     if: github.event_name == 'repository_dispatch' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -58,16 +62,11 @@ jobs:
           [[ -z "$EXPECTED_HEAD_SHA" || "$EXPECTED_HEAD_SHA" =~ ^[0-9a-fA-F]{40}$ ]] || exit 2
           echo "owner=${TARGET_REPOSITORY%%/*}" >> "$GITHUB_OUTPUT"
           echo "repo=${TARGET_REPOSITORY#*/}" >> "$GITHUB_OUTPUT"
-      - name: Get GPTomek installation token
+      - name: Exchange Actions OIDC for scoped GPTomek token
         id: auth
-        uses: actions/create-github-app-token@v3
-        with:
-          client-id: ${{ vars.GPTOMEK_APP_CLIENT_ID }}
-          private-key: ${{ secrets.GPTOMEK_APP_PRIVATE_KEY }}
-          owner: ${{ steps.target.outputs.owner }}
-          repositories: ${{ steps.target.outputs.repo }}
-          permission-pull-requests: write
-          permission-contents: read
+        env:
+          TARGET_REPOSITORY: ${{ github.event.client_payload.repository || inputs.repository }}
+        run: node .github/scripts/grok-oidc.mjs
       - name: Review PR with Grok
         env:
           TARGET_REPOSITORY: ${{ github.event.client_payload.repository || inputs.repository }}
