@@ -1,0 +1,41 @@
+# FUCKTHESECURITY
+name: xAI API one-shot smoke
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-slim
+    timeout-minutes: 3
+    env:
+      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+    steps:
+      - name: Make one minimal Grok API request
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${XAI_API_KEY:-}" ]]; then
+            echo 'secret_available=false'
+            exit 1
+          fi
+          echo 'secret_available=true'
+
+          status="$(curl --silent --show-error --max-time 90 \
+            --output "$RUNNER_TEMP/xai-response.json" \
+            --write-out '%{http_code}' \
+            --header "Authorization: Bearer ${XAI_API_KEY}" \
+            --header 'Content-Type: application/json' \
+            --data '{"model":"grok-4.7","messages":[{"role":"user","content":"Reply OK."}]}' \
+            https://api.x.ai/v1/chat/completions)"
+          echo "http_status=${status}"
+          if [[ "$status" == '200' ]]; then
+            jq -e '.choices | length > 0' "$RUNNER_TEMP/xai-response.json" >/dev/null
+            echo 'inference_result=success'
+          else
+            jq -r '"api_error_type=" + ((.error.type // "unknown") | tostring), "api_error_code=" + ((.error.code // "unknown") | tostring)' "$RUNNER_TEMP/xai-response.json" || true
+            exit 1
+          fi
