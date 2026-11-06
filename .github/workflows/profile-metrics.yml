@@ -1,0 +1,161 @@
+name: Profile metrics
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/profile-metrics.yml
+      - scripts/update_profile_metrics.py
+      - scripts/test_profile_metrics.py
+      - profile/README.md
+      - profile/README_pl.md
+      - profile/README_zh.md
+  pull_request:
+    paths:
+      - .github/workflows/profile-metrics.yml
+      - scripts/update_profile_metrics.py
+      - scripts/test_profile_metrics.py
+      - profile/README.md
+      - profile/README_pl.md
+      - profile/README_zh.md
+  schedule:
+    - cron: "43 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: profile-metrics-${{ github.repository }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install hardened XML parser
+        run: python3 -m pip install --disable-pip-version-check defusedxml==0.7.1
+      - name: Validate generator
+        run: |
+          python3 -m py_compile scripts/update_profile_metrics.py
+          python3 -m unittest discover -s scripts -p 'test_profile_metrics.py' -v
+
+  refresh:
+    if: github.event_name != 'pull_request' && github.repository == 'travnie/.github'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install hardened XML parser
+        run: python3 -m pip install --disable-pip-version-check defusedxml==0.7.1
+
+      - name: Generate merged PRs, repository size, and upkeep feed
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/update_profile_metrics.py
+
+      - name: Publish source data
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/profile/metrics/{merged-prs.json,repo-size.json,upkeep.xml}
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(profile): refresh metric data [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Check Metrics token
+        id: metrics_auth
+        env:
+          DATA_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GH_PAT }}
+        run: |
+          if [ -n "$DATA_TOKEN" ]; then
+            echo 'enabled=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'enabled=false' >> "$GITHUB_OUTPUT"
+            echo '::warning::Set METRICS_TOKEN or GH_PAT to enable organization activity and lines'
+          fi
+
+      - name: RSS from upkeep
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest/v3.34
+        with:
+          user: travnie
+          token: NOT_NEEDED
+          base: ""
+          filename: rss.svg
+          output_action: none
+          plugin_rss: yes
+          plugin_rss_source: https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/upkeep.xml
+          plugin_rss_limit: 7
+          config_timezone: Europe/Warsaw
+
+      - name: Activity, code, and mildly interesting habits
+        if: steps.metrics_auth.outputs.enabled == 'true'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest/v3.34
+        with:
+          user: travnie
+          token: ${{ secrets.METRICS_TOKEN || secrets.GH_PAT }}
+          base: ""
+          filename: activity.svg
+          output_action: none
+          plugin_activity: yes
+          plugin_activity_limit: 6
+          plugin_activity_days: 30
+          plugin_activity_visibility: public
+          plugin_activity_filter: push, pr, review, release
+          plugin_code: yes
+          plugin_code_days: 30
+          plugin_code_visibility: public
+          plugin_code_lines: 8
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: no
+          config_timezone: Europe/Warsaw
+          config_order: activity, code, habits
+
+      - name: Lines in terminal style
+        if: steps.metrics_auth.outputs.enabled == 'true'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest/v3.34
+        with:
+          user: travnie
+          token: ${{ secrets.METRICS_TOKEN || secrets.GH_PAT }}
+          base: repositories
+          template: terminal
+          filename: lines.svg
+          output_action: none
+          plugin_lines: yes
+          plugin_lines_sections: repositories, history
+          plugin_lines_repositories_limit: 4
+          plugin_lines_history_limit: 1
+          config_timezone: Europe/Warsaw
+
+      - name: Publish rendered cards
+        run: |
+          set -euo pipefail
+          mkdir -p assets/profile/metrics
+          test -s /metrics_renders/rss.svg
+          sudo install -m 644 /metrics_renders/rss.svg assets/profile/metrics/rss.svg
+          for name in activity lines; do
+            if [ -s "/metrics_renders/$name.svg" ]; then
+              sudo install -m 644 "/metrics_renders/$name.svg" "assets/profile/metrics/$name.svg"
+            else
+              echo "::warning::$name card skipped (METRICS_TOKEN or GH_PAT required)"
+              if [ ! -s "assets/profile/metrics/$name.svg" ]; then
+                echo '<svg xmlns="http://www.w3.org/2000/svg" width="620" height="65" viewBox="0 0 620 65"><rect width="620" height="65" rx="8" fill="#20252d"/><text x="20" y="37" font-family="monospace" font-size="16" fill="#ced4df">GitHub metrics: configure METRICS_TOKEN</text></svg>' > "assets/profile/metrics/$name.svg"
+              fi
+            fi
+          done
+          git add assets/profile/metrics/{rss.svg,activity.svg,lines.svg}
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(profile): refresh metrics cards [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
