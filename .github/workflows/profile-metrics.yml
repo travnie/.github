@@ -23,7 +23,7 @@ on: # yamllint disable-line rule:truthy
   workflow_dispatch:
 
 concurrency:
-  group: profile-metrics-${{ github.repository }}-${{ github.event_name }}-${{ github.event.pull_request.number || 'refresh' }}
+  group: profile-metrics-${{ github.repository }}-${{ github.event.pull_request.number || 'refresh' }}
   cancel-in-progress: false
 
 permissions: {}
