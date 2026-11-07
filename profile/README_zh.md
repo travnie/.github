@@ -13,7 +13,7 @@
 
 <sub></sub>
 
-[![Merged PRs](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ftravnie%2F.github%2Fmain%2Fassets%2Fprofile%2Fmetrics%2Fmerged-prs.json&cacheSeconds=3600)](../docs/profile-metrics.md#merged-pull-requests) [![Repository size](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Ftravnie%2F.github%2Fmain%2Fassets%2Fprofile%2Fmetrics%2Frepo-size.json&cacheSeconds=3600)](../docs/profile-metrics.md#repository-size)
+[![Merged PRs](https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/merged-prs.svg)](../docs/profile-metrics.md#merged-pull-requests) [![Repository size](https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/repo-size.svg)](../docs/profile-metrics.md#repository-size)
 
 [Polski](README_pl.md) · [English](README.md) · **简体中文**
 
@@ -47,7 +47,6 @@
 <p align="center">
   <a href="https://github.com/trvny/feedseek/blob/main/feeds/feed_jbzd.xml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/rss.svg" alt="Latest JBZD posts via Feedseek" width="650"></a>
   <a href="../.github/workflows/profile-metrics.yml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/activity.svg" alt="Public GitHub activity, code samples and mildly interesting coding habits" width="650"></a>
-  <a href="https://github.com/lowlighter/metrics/blob/master/source/plugins/lines/README.md"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/lines.svg" alt="Lines changed in the terminal layout" width="650"></a>
 </p>
 
 ### 我和我的伙计们
