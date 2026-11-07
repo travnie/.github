@@ -104,7 +104,7 @@ jobs:
           filename: rss.svg
           output_action: none
           plugin_rss: yes
-          plugin_rss_source: https://raw.githubusercontent.com/trvny/feedseek/main/feeds/feed_jbzd.xml
+          plugin_rss_source: https://trvny.github.io/feedseek/jbzd.xml
           plugin_rss_limit: 5
           config_timezone: Europe/Warsaw
 

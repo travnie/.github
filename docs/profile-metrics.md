@@ -10,7 +10,7 @@ Sum of GitHub REST repository `size` values (KiB) for public repos under both ow
 
 ## Feeds and cards
 
-RSS displays only [JBZD](https://github.com/trvny/feedseek/blob/main/feeds/feed_jbzd.xml) using the existing [Feedseek](https://github.com/trvny/feedseek) Atom feed. No second feed generator, aggregation or cache.
+RSS displays only [JBZD](https://trvny.github.io/feedseek/jbzd.xml) using the existing [Feedseek](https://github.com/trvny/feedseek) Atom feed. No second feed generator, aggregation or cache.
 
 Cards: JBZD RSS; public activity + random public code + mildly interesting habits. Generated assets: [merged PRs](../assets/profile/metrics/merged-prs.svg), [repository size](../assets/profile/metrics/repo-size.svg), and Metrics SVG cards. Badges are generated directly, without Shields. Do not manually edit.
 
