@@ -37,12 +37,12 @@ async function runTest(failSearch) {
       core: { info() {}, warning(msg) { warnings.push(msg); } },
       outputDir: dir,
     });
-    const prs = JSON.parse(fs.readFileSync(path.join(dir, "merged-prs.json")));
-    const size = JSON.parse(fs.readFileSync(path.join(dir, "repo-size.json")));
-    assert.equal(prs.schemaVersion, 1);
-    assert.ok(prs.logoSvg.includes("<svg"));
-    assert.equal(prs.message, failSearch ? "unavailable" : "1,801");
-    assert.equal(size.message, "3.0 MiB");
+    const prs = fs.readFileSync(path.join(dir, "merged-prs.svg"), "utf8");
+    const size = fs.readFileSync(path.join(dir, "repo-size.svg"), "utf8");
+    assert.match(prs, /<svg xmlns="http:\/\/www.w3.org\/2000\/svg"/);
+    assert.match(prs, /<circle cx="6"/);
+    assert.ok(prs.includes(failSearch ? ">unavailable</text>" : ">1,801</text>"));
+    assert.ok(size.includes(">3.0 MiB</text>"));
     assert.equal(warnings.length, failSearch ? 1 : 0);
   } finally {
     fs.rmSync(dir, { force: true, recursive: true });
