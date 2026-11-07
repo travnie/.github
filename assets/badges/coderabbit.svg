@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="135" height="28" viewBox="0 0 135 28" role="img" aria-label="CodeRabbit">
+  <title>CodeRabbit</title>
+  <defs>
+    <linearGradient id="b-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b2b"/><stop offset="1" stop-color="#c2410c"/></linearGradient>
+    <linearGradient id="b-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".14"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <clipPath id="b-clip"><rect width="135" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#b-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/><rect x="34" width="101" height="28" fill="url(#b-g)"/><rect x="34" width="101" height="14" fill="url(#b-shine)"/><rect x="34" width="1" height="28" fill="#c2410c" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="134" height="27" rx="5.5" fill="none" stroke="#c2410c" stroke-opacity=".55"/>
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24" fill="#ea580c"><path d="M10.3 6.74a.75.75 0 0 1-.04 1.06l-2.908 2.7 2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M1.5 4.25c0-.966.784-1.75 1.75-1.75h17.5c.966 0 1.75.784 1.75 1.75v12.5a1.75 1.75 0 0 1-1.75 1.75h-9.69l-3.573 3.573A1.458 1.458 0 0 1 5 21.043V18.5H3.25a1.75 1.75 0 0 1-1.75-1.75ZM3.25 4a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 .75.75v3.19l3.72-3.72a.749.749 0 0 1 .53-.22h10a.25.25 0 0 0 .25-.25V4.25a.25.25 0 0 0-.25-.25Z"/></svg>
+  <text x="84.5" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">CodeRabbit</text>
+</svg>

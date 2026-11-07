@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="28" viewBox="0 0 110 28" role="img" aria-label="Gremlin">
+  <title>Gremlin</title>
+  <defs>
+    <linearGradient id="b-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f9142"/><stop offset="1" stop-color="#1f4d22"/></linearGradient>
+    <linearGradient id="b-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".14"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <clipPath id="b-clip"><rect width="110" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#b-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/><rect x="34" width="76" height="28" fill="url(#b-g)"/><rect x="34" width="76" height="14" fill="url(#b-shine)"/><rect x="34" width="1" height="28" fill="#1f4d22" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="109" height="27" rx="5.5" fill="none" stroke="#1f4d22" stroke-opacity=".55"/>
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24" fill="#2f6f32"><path d="M0 13C0 6.373 5.373 1 12 1s12 5.373 12 12v8.657a.75.75 0 0 1-1.5 0V13c0-5.799-4.701-10.5-10.5-10.5S1.5 7.201 1.5 13v8.657a.75.75 0 0 1-1.5 0V13Z"/><path d="M8 19.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75ZM5.25 9.5h13.5c.966 0 1.75.784 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75H5.25a1.75 1.75 0 0 1-1.75-1.75v-3.5c0-.966.784-1.75 1.75-1.75Zm.22 1.47a.75.75 0 0 0 0 1.06l3 3a.75.75 0 0 0 1.06 0L12 12.56l2.47 2.47a.75.75 0 0 0 1.06 0l3-3a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L15 13.44l-2.47-2.47a.75.75 0 0 0-1.06 0L9 13.44l-2.47-2.47a.75.75 0 0 0-1.06 0Z"/></svg>
+  <text x="72" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">Gremlin</text>
+</svg>

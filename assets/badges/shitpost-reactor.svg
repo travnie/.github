@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="169" height="28" viewBox="0 0 169 28" role="img" aria-label="Shitpost Reactor">
+  <title>Shitpost Reactor</title>
+  <defs>
+    <linearGradient id="b-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ef4444"/><stop offset="1" stop-color="#7f1d1d"/></linearGradient>
+    <linearGradient id="b-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".14"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <clipPath id="b-clip"><rect width="169" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#b-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/><rect x="34" width="135" height="28" fill="url(#b-g)"/><rect x="34" width="135" height="14" fill="url(#b-shine)"/><rect x="34" width="1" height="28" fill="#7f1d1d" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="168" height="27" rx="5.5" fill="none" stroke="#7f1d1d" stroke-opacity=".55"/>
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24" fill="#dc2626"><path d="M14.265 1.627c0 3.545 1.869 5.327 3.479 7.021 1.54 1.62 3.006 3.163 3.006 6.102 0 4.812-3.753 8.25-8.565 8.25-4.813 0-8.935-3.421-8.935-8.25 0-2.039.962-4.011 2.509-4.899.305-.175.672.007.803.334C7.563 12.684 8.797 12.64 9.437 12c.388-.387.47-1.116-.004-2.062-2.405-4.812 1.863-8.279 4.2-8.854.336-.082.615.198.632.543ZM12.185 21.5c4.059 0 7.065-2.84 7.065-6.75 0-2.337-1.093-3.489-2.678-5.158l-.021-.023c-1.44-1.517-3.139-3.351-3.649-6.557a6.148 6.148 0 0 0-1.911 1.76c-.787 1.144-1.147 2.633-.216 4.495.603 1.205.777 2.74-.277 3.794-.657.657-1.762 1.1-2.956.586-.752-.324-1.353-.955-1.838-1.79-.567.706-.954 1.74-.954 2.893 0 3.847 3.288 6.75 7.435 6.75Z"/></svg>
+  <text x="101.5" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">Shitpost Reactor</text>
+</svg>
