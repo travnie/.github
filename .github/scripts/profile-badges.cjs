@@ -8,17 +8,27 @@ const OWNERS = [
   { owner: "travnie", kind: "org", search: "is:pr is:merged org:travnie" },
 ];
 
-function logo(which) {
-  const shape = which === "pr"
-    ? '<circle cx="6" cy="3" r="2"/><path d="M6 5v12"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="6" r="2"/><path d="M18 8v4a6 6 0 0 1-6 6H8"/>'
-    : '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 2 4 3 9 3s9-1 9-3V5M3 12c0 2 4 3 9 3s9-1 9-3"/>';
-  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + shape + "</svg>";
-}
+function escapeXml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&apos;");}
 
+function badgeSvg(label,message,color,which){
+ const leftWidth=Math.ceil(36+label.length*6.2);
+ const rightWidth=Math.ceil(20+message.length*6.4);
+ const width=leftWidth+rightWidth;
+ const shape=which==="pr"
+  ? '<circle cx="6" cy="3" r="2"/><path d="M6 5v12"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="6" r="2"/><path d="M18 8v4a6 6 0 0 1-6 6H8"/>'
+  : '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 2 4 3 9 3s9-1 9-3V5M3 12c0 2 4 3 9 3s9-1 9-3"/>';
+ return '<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="20" viewBox="0 0 '+width+' 20" role="img" aria-label="'+escapeXml(label+": "+message)+'">'
+  +'<title>'+escapeXml(label+": "+message)+'</title>'
+  +'<rect width="'+leftWidth+'" height="20" fill="#30363d"/>'
+  +'<rect x="'+leftWidth+'" width="'+rightWidth+'" height="20" fill="#'+color+'"/>'
+  +'<g transform="translate(5 3) scale(0.58)" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">'+shape+'</g>'
+  +'<g font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" fill="#fff">'
+  +'<text x="'+(leftWidth-9)+'" y="14" text-anchor="end">'+escapeXml(label)+'</text>'
+  +'<text x="'+(leftWidth+rightWidth/2)+'" y="14" text-anchor="middle">'+escapeXml(message)+'</text>'
+  +'</g></svg>\n';
+}
 function save(dir, file, label, message, color, which) {
-  fs.writeFileSync(path.join(dir, file), JSON.stringify({
-    schemaVersion: 1, label, message, color, logoSvg: logo(which), style: "flat-square",
-  }, null, 2) + "\n");
+  fs.writeFileSync(path.join(dir, file), badgeSvg(label, message, color, which));
 }
 
 async function mergedPullRequests(github) {
@@ -71,9 +81,9 @@ module.exports = async function generateProfileBadges({
     }
   }
 
-  await update("merged-prs.json", "merged PRs", "8250df", "pr",
+  await update("merged-prs.svg", "merged PRs", "8250df", "pr",
     async () => (await mergedPullRequests(github)).toLocaleString("en-US"));
-  await update("repo-size.json", "repo size", "0969da", "size", async () => {
+  await update("repo-size.svg", "repo size", "0969da", "size", async () => {
     const { kib, count } = await repositorySizes(github);
     core.info("Public repositories: " + count);
     return kib >= 1048576 ? (kib / 1048576).toFixed(2) + " GiB"
