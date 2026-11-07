@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="28" viewBox="0 0 114 28" role="img" aria-label="Benches">
+  <title>Benches</title>
+  <defs>
+    <linearGradient id="b-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f766e"/><stop offset="1" stop-color="#134e4a"/></linearGradient>
+    <linearGradient id="b-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".14"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <clipPath id="b-clip"><rect width="114" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#b-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/><rect x="34" width="80" height="28" fill="url(#b-g)"/><rect x="34" width="80" height="14" fill="url(#b-shine)"/><rect x="34" width="1" height="28" fill="#134e4a" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="113" height="27" rx="5.5" fill="none" stroke="#134e4a" stroke-opacity=".55"/>
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24" fill="#0f766e"><path d="M7.875 2.292a.114.114 0 0 0-.032.018A7.239 7.239 0 0 0 4.75 8.25a7.248 7.248 0 0 0 3.654 6.297c.57.327.982.955.941 1.682v.002l-.317 6.058a.75.75 0 1 1-1.498-.078l.317-6.062v-.004c.006-.09-.047-.215-.188-.296A8.749 8.749 0 0 1 3.25 8.25a8.738 8.738 0 0 1 3.732-7.169 1.547 1.547 0 0 1 1.709-.064c.484.292.809.835.809 1.46v4.714a.25.25 0 0 0 .119.213l2.25 1.385c.08.05.182.05.262 0l2.25-1.385a.25.25 0 0 0 .119-.213V2.478c0-.626.325-1.169.81-1.461a1.547 1.547 0 0 1 1.708.064 8.741 8.741 0 0 1 3.732 7.17 8.747 8.747 0 0 1-4.41 7.598c-.14.081-.193.206-.188.296v.004l.318 6.062a.75.75 0 1 1-1.498.078l-.317-6.058v-.002c-.041-.727.37-1.355.94-1.682A7.247 7.247 0 0 0 19.25 8.25a7.239 7.239 0 0 0-3.093-5.94.114.114 0 0 0-.032-.018l-.01-.001c-.003 0-.014 0-.031.01-.036.022-.084.079-.084.177V7.19c0 .608-.315 1.172-.833 1.49l-2.25 1.385a1.75 1.75 0 0 1-1.834 0l-2.25-1.384A1.752 1.752 0 0 1 8 7.192V2.477c0-.098-.048-.155-.084-.176a.068.068 0 0 0-.031-.011l-.01.001Z"/></svg>
+  <text x="74" y="18.5" text-anchor="middle" fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">Benches</text>
+</svg>
