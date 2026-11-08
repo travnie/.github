@@ -46,7 +46,7 @@
 
 <p align="center">
   <a href="https://trvny.github.io/feedseek/jbzd.xml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/rss.svg" alt="Latest JBZD posts via Feedseek" width="650"></a>
-  <a href="../.github/workflows/profile-metrics.yml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/activity.svg" alt="Public GitHub activity, code samples and mildly interesting coding habits" width="650"></a>
+  <a href="../.github/workflows/profile-metrics.yml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/activity.svg" alt="Latest commits across public trvny and travnie repositories" width="650"></a>
 </p>
 
 ### 我和我的伙计们
