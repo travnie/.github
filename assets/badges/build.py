@@ -3,14 +3,22 @@
 
 Icons: @lobehub/icons-static-svg (MIT). Usage:
   npm pack @lobehub/icons-static-svg && tar xzf lobehub-icons-static-svg-*.tgz
-  python3 assets/badges/build.py package/icons
+  python3 assets/badges/build.py   # from the dir holding package/icons
 Needs Pillow + a bold font for label widths (DejaVu Sans/Verdana; BADGE_FONT to override).
 
 Style mirrors docs7.svg (hand-made, not generated). Add a badge = add a BADGES row.
+
+Ecosystem badges (twojstar, apps, bots, reviewers) are snapshots of the live
+service at travny.pages.dev/badge (source: trvny/trvny pages/functions/_shared/eco.js);
+add them there, then rerun to refresh. Live counters/status stay links, never snapshots.
+--offline: skip the live service, reuse eco.json (last snapshot manifest).
 """
+import json
 import os
 import re
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 from PIL import ImageFont
@@ -59,6 +67,39 @@ BADGES = [
 ]
 # hand-made badges kept as-is, listed in README only
 EXTRA = [("Infra", "docs7", "Docs7", "https://travnie.docs7.io/")]
+
+LIVE = "https://travny.pages.dev"
+ECO_GROUPS = ["Brand", "Apps", "Workshop", "Bots", "Reviewers"]
+ECO_LINKS = {
+    "twojstar": "https://github.com/travnie",
+    "papiesz": "https://travny.pages.dev/papagenerator/",
+    "papagenerator": "https://travny.pages.dev/papagenerator/",
+    "feedseek": "https://trvny.github.io/feedseek/",
+    "kanarek": "https://github.com/travnie/kanarek",
+    "autka": "https://github.com/travnie/Autka",
+    "tvpi": "https://travny.pages.dev/tv/",
+    "aistee": "https://github.com/travnie/aistee",
+    "benches": "https://github.com/travnie/twojstar",
+    "codebench": "https://codebench.travny.workers.dev/",
+    "streambench": "https://streambench.travny.workers.dev/",
+    "docbench": "https://docbench.travny.workers.dev/",
+    "spacemolt": "https://github.com/travnie/twojstar",
+}
+# live-only routes -> link target; anything else in the catalogue's Live group links to /badges/
+LIVE_LINKS = {
+    "feedseek/feeds": "https://trvny.github.io/feedseek/",
+    "tvpi/channels": "https://travny.pages.dev/tv/",
+    "status/kanarek": "https://kanarek.travny.workers.dev/health",
+    "status/tvpi": "https://travny.pages.dev/tv/",
+    "status/feedseek": "https://trvny.github.io/feedseek/",
+    "status/docbench": "https://docbench.travny.workers.dev/",
+}
+MARKS = ["twojstar", "papiesz", "kanarek", "autka", "tvpi"]  # bare logos, 128px; keep in sync with eco.js MARKS
+ICONS = Path("package/icons")  # unpacked @lobehub/icons-static-svg; fixed, not argv (CodeQL py/path-injection)
+DRAWING = re.compile(r"<(?:path|polygon|circle|ellipse|rect|g)\b")
+MANIFEST = HERE / "eco.json"  # last snapshot: eco rows + live rows; drives stale cleanup and --offline
+SAFE_SLUG = re.compile(r"[a-z0-9][a-z0-9-]{0,40}")
+UNSAFE_SVG = re.compile(r"<script|<foreignObject|\son\w+\s*=|(?:href\s*=|url\()\s*(?:[\"'](?!#)|(?![\"'#]))", re.I)
 
 
 def load_font():
@@ -121,12 +162,75 @@ def badge(slug, label, icon, c1, c2, ex, icons: Path, font, scale) -> str:
 """
 
 
-def readme(rows) -> str:
+def fetch(path: str) -> str:
+    req = urllib.request.Request(LIVE + path, headers={"user-agent": "travnie-badges-build"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as res:
+            return res.read().decode()
+    except (urllib.error.URLError, TimeoutError) as e:
+        raise SystemExit(f"{path}: {e}; rerun later or use --offline") from e
+
+
+def checked_svg(name: str, svg: str, icon: bool) -> str:
+    """Reject non-SVG, unsafe or icon-less responses before anything is written."""
+    if not re.match(r"\s*<svg\b", svg) or UNSAFE_SVG.search(svg):
+        raise SystemExit(f"{name}: not a clean SVG")
+    if icon and svg.count("<svg") < 2:  # badge = root svg + nested icon svg
+        raise SystemExit(f"{name}: snapshot without icon, retry later")
+    if not DRAWING.search(svg):
+        raise SystemExit(f"{name}: empty SVG")
+    return svg
+
+
+def snapshot_eco() -> tuple[list, list]:
+    """Download ecosystem badges + marks, write only when all succeeded; return (eco rows, live rows)."""
+    catalogue = json.loads(fetch("/badge/index.json"))
+    rows, live, files = [], [], {}
+    for row in catalogue["badges"]:
+        if row["group"] == "Live":
+            live.append((row["slug"], LIVE_LINKS.get(row["slug"], LIVE + "/badges/")))
+            continue
+        if row["group"] not in ECO_GROUPS:
+            continue
+        slug = row["slug"]
+        if not SAFE_SLUG.fullmatch(slug):
+            raise SystemExit(f"unsafe slug in catalogue: {slug!r}")
+        files[f"{slug}.svg"] = checked_svg(slug, fetch(row["path"]), icon=True)
+        rows.append([row["group"], slug, row["label"], ECO_LINKS.get(slug, LIVE + "/badges/")])
+    for slug in MARKS:
+        files[f"mark-{slug}.svg"] = checked_svg(f"mark-{slug}", fetch(f"/badge/mark/{slug}.svg?size=128"), icon=False)
+    old = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {"eco": []}
+    for _, slug, *_ in old["eco"]:
+        if SAFE_SLUG.fullmatch(slug) and f"{slug}.svg" not in files:
+            (HERE / f"{slug}.svg").unlink(missing_ok=True)  # dropped upstream
+    for name, svg in files.items():
+        (HERE / name).write_text(svg)
+    MANIFEST.write_text(manifest(rows, live))
+    return rows, live
+
+
+def manifest(rows, live) -> str:
+    """One row per line: readable diffs."""
+    lines = lambda xs: ",\n".join(" " + json.dumps(list(x)) for x in xs)  # noqa: E731
+    return f'{{"eco": [\n{lines(rows)}\n], "live": [\n{lines(live)}\n]}}\n'
+
+
+def md_text(s: str) -> str:
+    return re.sub(r"([\[\]|\\])", r"\\\1", s)
+
+
+def attr(s: str) -> str:
+    return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def readme(rows, live) -> str:
     out = [
         "# Badges",
         "",
         "Brand badges for READMEs, comments and sites. 28 px tall, same style as `docs7.svg`.",
         "Generated by `build.py` (icons: [lobe-icons](https://github.com/lobehub/lobe-icons), MIT) - edit `BADGES` there, rerun, commit.",
+        "Ecosystem groups (Brand, Apps, Workshop, Bots, Reviewers) and marks are snapshots of the live service:"
+        " change them in trvny/trvny `pages/functions/_shared/eco.js` (marks: also `MARKS` in `build.py`), deploy, then rerun `build.py` (not `BADGES`).",
         "",
         "- Markdown: `raw.githubusercontent.com` (fine on GitHub).",
         "- HTML / Pages / external sites: jsDelivr (proper `image/svg+xml`, cached; purge `https://purge.jsdelivr.net/gh/travnie/.github@main/assets/badges/<name>.svg` after changes).",
@@ -138,24 +242,57 @@ def readme(rows) -> str:
         if g != group:
             group = g
             out += [f"## {g}", "", "| Badge | Markdown | HTML |", "|---|---|---|"]
-        md = f"[![{label}]({RAW}/{slug}.svg)]({href})"
-        html = f'<a href="{href}"><img src="{CDN}/{slug}.svg" alt="{label}" height="28"></a>'
-        out.append(f"| {md} | `{md}` | `{html}` |")
-        if rows.index((g, slug, label, href)) + 1 == len(rows) or rows[rows.index((g, slug, label, href)) + 1][0] != g:
+        md = f"[![{md_text(label)}]({RAW}/{slug}.svg)]({href})"
+        html = f'<a href="{attr(href)}"><img src="{CDN}/{slug}.svg" alt="{attr(label)}" height="28"></a>'
+        cell = lambda s: re.sub(r"(?<!\\)\|", r"\\|", s)  # noqa: E731 - unescaped pipes inside table code spans
+        out.append(f"| {md} | `{cell(md)}` | `{cell(html)}` |")
+        i = rows.index((g, slug, label, href))
+        if i + 1 == len(rows) or rows[i + 1][0] != g:
             out.append("")
+    marks = " ".join(f'<img src="{CDN}/mark-{m}.svg" alt="{m}" height="48">' for m in MARKS)
+    out += [
+        "## Marks",
+        "",
+        "Bare logos (128 px, scale freely): " + ", ".join(f"`mark-{m}.svg`" for m in MARKS) + ".",
+        "",
+        marks,
+        "",
+        "## Live (not snapshotted)",
+        "",
+        f"Rendered on request by [{LIVE}/badges/]({LIVE}/badges/) - counters refresh hourly, status every 2 min.",
+        "Any badge there also takes `?label=`, `?color=` and (except counters/status, which show the probe result) `?value=`;"
+        " any Primer Octicon via `/badge/o/<name>.svg`.",
+        "",
+        "| Badge | Markdown |",
+        "|---|---|",
+    ]
+    for path, href in [*live, ("o/git-pull-request-agent.svg?label=agent%20PR&color=purple", None)]:
+        src = f"{LIVE}/badge/{path}" + ("" if ".svg" in path else ".svg")
+        md = f"[![{path}]({src})]({href})" if href else f"![{path}]({src})"
+        out.append(f"| {md} | `{md}` |")
+    out.append("")
     return "\n".join(out)
 
 
 def main():
-    icons = Path(sys.argv[1] if len(sys.argv) > 1 else "package/icons")
+    icons = ICONS
+    if not icons.is_dir():
+        sys.exit(f"{icons} missing: npm pack @lobehub/icons-static-svg && tar xzf lobehub-icons-static-svg-*.tgz")
     font, scale = load_font()
     for _, slug, label, icon, _, c1, c2, ex in BADGES:
         (HERE / f"{slug}.svg").write_text(badge(slug, label, icon, c1, c2, ex, icons, font, scale))
-    rows = [(g, s, l, h) for g, s, l, _, h, *_ in BADGES] + EXTRA
-    order = {"Infra": 0, "Routers": 1, "Models": 2}
+    if "--offline" in sys.argv:
+        if not MANIFEST.exists():
+            sys.exit("--offline needs eco.json from an earlier online run")
+        snap = json.loads(MANIFEST.read_text())
+        eco, live = snap["eco"], snap["live"]
+    else:
+        eco, live = snapshot_eco()
+    rows = [(g, s, l, h) for g, s, l, _, h, *_ in BADGES] + EXTRA + [tuple(r) for r in eco]
+    order = {g: i for i, g in enumerate(ECO_GROUPS + ["Infra", "Routers", "Models"])}
     rows.sort(key=lambda r: order[r[0]])
-    (HERE / "README.md").write_text(readme(rows))
-    print(f"{len(BADGES)} badges -> {HERE}")
+    (HERE / "README.md").write_text(readme(rows, [tuple(r) for r in live]))
+    print(f"{len(BADGES)} brand + {len(eco)} eco badges, {len(MARKS)} marks -> {HERE}")
 
 
 if __name__ == "__main__":

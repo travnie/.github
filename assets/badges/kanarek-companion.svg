@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="191" height="28" viewBox="0 0 191 28" role="img" aria-label="Kanarek Companion">
+  <title>Kanarek Companion</title>
+  <defs>
+    <linearGradient id="b-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd23f"/><stop offset="1" stop-color="#f2a900"/></linearGradient>
+    <linearGradient id="b-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".14"/><stop offset=".55" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <clipPath id="b-clip"><rect width="191" height="28" rx="6"/></clipPath>
+  </defs>
+  <g clip-path="url(#b-clip)">
+    <rect width="34" height="28" fill="#f8fafc"/><rect x="34" width="157" height="28" fill="url(#b-g)"/><rect x="34" width="157" height="14" fill="url(#b-shine)"/><rect x="34" width="1" height="28" fill="#f2a900" fill-opacity=".5"/>
+  </g>
+  <rect x=".5" y=".5" width="190" height="27" rx="5.5" fill="none" stroke="#f2a900" stroke-opacity=".55"/>
+  <svg x="8" y="5" width="18" height="18" viewBox="0 0 24 24"><polygon points="4.6,13 .8,10.4 1.6,16.4" fill="#e0a800"/><ellipse cx="10.8" cy="14.2" rx="7.2" ry="5.6" fill="#f7c600"/><circle cx="16.4" cy="8.6" r="4.2" fill="#f7c600"/><path d="M6.6 12.8C8.6 11.2 12.2 11.6 13.6 14.2 11.4 16.4 8 16 6.6 12.8Z" fill="#e0a800"/><polygon points="20.2,7.6 23.6,8.9 20.3,10.3" fill="#f28c00"/><circle cx="17.6" cy="7.8" r=".95" fill="#1f2328"/></svg>
+  <text x="112.5" y="18.5" text-anchor="middle" fill="#3a2a00" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" font-weight="700" text-rendering="geometricPrecision">Kanarek Companion</text>
+</svg>
