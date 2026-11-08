@@ -1,4 +1,4 @@
-# Code of Conduct
+# Code of Conduct <img src="https://github.com/primer/octicons/blob/main/icons/code-of-conduct-16.svg">
 
 ## Scope
 
