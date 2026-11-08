@@ -7,7 +7,13 @@ Icons: @lobehub/icons-static-svg (MIT). Usage:
 Needs Pillow + a bold font for label widths (DejaVu Sans/Verdana; BADGE_FONT to override).
 
 Style mirrors docs7.svg (hand-made, not generated). Add a badge = add a BADGES row.
+
+Ecosystem badges (twojstar, apps, bots, reviewers) are snapshots of the live
+service at travny.pages.dev/badge (source: trvny/trvny pages/functions/_shared/eco.js);
+add them there, then rerun to refresh. Live counters/status stay links, never snapshots.
 """
+import json
+import urllib.request
 import os
 import re
 import sys
@@ -59,6 +65,25 @@ BADGES = [
 ]
 # hand-made badges kept as-is, listed in README only
 EXTRA = [("Infra", "docs7", "Docs7", "https://travnie.docs7.io/")]
+
+LIVE = "https://travny.pages.dev"
+ECO_GROUPS = ["Brand", "Apps", "Workshop", "Bots", "Reviewers"]
+ECO_LINKS = {
+    "twojstar": "https://github.com/travnie",
+    "papiesz": "https://travny.pages.dev/papagenerator/",
+    "papagenerator": "https://travny.pages.dev/papagenerator/",
+    "feedseek": "https://trvny.github.io/feedseek/",
+    "kanarek": "https://github.com/travnie/kanarek",
+    "autka": "https://github.com/travnie/Autka",
+    "tvpi": "https://travny.pages.dev/tv/",
+    "aistee": "https://github.com/travnie/aistee",
+    "benches": "https://github.com/travnie/twojstar",
+    "codebench": "https://codebench.travny.workers.dev/",
+    "streambench": "https://streambench.travny.workers.dev/",
+    "docbench": "https://docbench.travny.workers.dev/",
+    "spacemolt": "https://github.com/travnie/twojstar",
+}
+MARKS = ["twojstar", "papiesz", "kanarek", "autka", "tvpi"]  # bare logos, 128px
 
 
 def load_font():
@@ -121,6 +146,31 @@ def badge(slug, label, icon, c1, c2, ex, icons: Path, font, scale) -> str:
 """
 
 
+def fetch(path: str) -> str:
+    req = urllib.request.Request(LIVE + path, headers={"user-agent": "travnie-badges-build"})
+    with urllib.request.urlopen(req, timeout=30) as res:
+        if res.status != 200:
+            raise SystemExit(f"{path}: HTTP {res.status}")
+        return res.read().decode()
+
+
+def snapshot_eco() -> list[tuple[str, str, str, str]]:
+    """Copy ecosystem badges + marks from the live service; return README rows."""
+    catalogue = json.loads(fetch("/badge/index.json"))
+    rows = []
+    for row in catalogue["badges"]:
+        if row["group"] not in ECO_GROUPS:
+            continue
+        svg = fetch(row["path"])
+        if '<svg x="8"' not in svg and "<polygon" not in svg:
+            raise SystemExit(f"{row['slug']}: snapshot without icon, retry later")
+        (HERE / f"{row['slug']}.svg").write_text(svg)
+        rows.append((row["group"], row["slug"], row["label"], ECO_LINKS.get(row["slug"], LIVE + "/badges/")))
+    for slug in MARKS:
+        (HERE / f"mark-{slug}.svg").write_text(fetch(f"/badge/mark/{slug}.svg?size=128"))
+    return rows
+
+
 def readme(rows) -> str:
     out = [
         "# Badges",
@@ -143,6 +193,34 @@ def readme(rows) -> str:
         out.append(f"| {md} | `{md}` | `{html}` |")
         if rows.index((g, slug, label, href)) + 1 == len(rows) or rows[rows.index((g, slug, label, href)) + 1][0] != g:
             out.append("")
+    marks = " ".join(f'<img src="{CDN}/mark-{m}.svg" alt="{m}" height="48">' for m in MARKS)
+    out += [
+        "## Marks",
+        "",
+        "Bare logos (128 px, scale freely): " + ", ".join(f"`mark-{m}.svg`" for m in MARKS) + ".",
+        "",
+        marks,
+        "",
+        "## Live (not snapshotted)",
+        "",
+        f"Rendered on request by [{LIVE}/badges/]({LIVE}/badges/) - counters refresh hourly, status every 2 min.",
+        "Any badge there also takes `?label=`, `?value=`, `?color=`; any Primer Octicon via `/badge/o/<name>.svg`.",
+        "",
+        "| Badge | Markdown |",
+        "|---|---|",
+    ]
+    for path, href in [
+        ("feedseek/feeds", "https://trvny.github.io/feedseek/"),
+        ("tvpi/channels", "https://travny.pages.dev/tv/"),
+        ("status/kanarek", "https://kanarek.travny.workers.dev/health"),
+        ("status/tvpi", "https://travny.pages.dev/tv/"),
+        ("status/feedseek", "https://trvny.github.io/feedseek/"),
+        ("o/git-pull-request-agent.svg?label=agent%20PR&color=purple", None),
+    ]:
+        src = f"{LIVE}/badge/{path}" + ("" if ".svg" in path else ".svg")
+        md = f"[![{path}]({src})]({href})" if href else f"![{path}]({src})"
+        out.append(f"| {md} | `{md}` |")
+    out.append("")
     return "\n".join(out)
 
 
@@ -151,8 +229,8 @@ def main():
     font, scale = load_font()
     for _, slug, label, icon, _, c1, c2, ex in BADGES:
         (HERE / f"{slug}.svg").write_text(badge(slug, label, icon, c1, c2, ex, icons, font, scale))
-    rows = [(g, s, l, h) for g, s, l, _, h, *_ in BADGES] + EXTRA
-    order = {"Infra": 0, "Routers": 1, "Models": 2}
+    rows = [(g, s, l, h) for g, s, l, _, h, *_ in BADGES] + EXTRA + snapshot_eco()
+    order = {g: i for i, g in enumerate(ECO_GROUPS + ["Infra", "Routers", "Models"])}
     rows.sort(key=lambda r: order[r[0]])
     (HERE / "README.md").write_text(readme(rows))
     print(f"{len(BADGES)} badges -> {HERE}")
