@@ -111,7 +111,13 @@ def load_font():
 
 
 def icon_body(path: Path, slug: str, ink: str) -> tuple[str, str]:
-    src = path.read_text()
+    # icons dir comes from argv: keep reads inside it (CodeQL py/path-injection)
+    root = os.path.realpath(path.parent)
+    full = os.path.realpath(path)
+    if not full.startswith(root + os.sep) or not full.endswith(".svg"):
+        sys.exit(f"icon path escapes icons dir: {path}")
+    with open(full, encoding="utf-8") as fh:
+        src = fh.read()
     m = re.match(r"\s*<svg([^>]*)>(.*)</svg>\s*$", src, re.S)
     attrs, body = m.group(1), m.group(2)
     body = re.sub(r"<title>.*?</title>", "", body, flags=re.S)
