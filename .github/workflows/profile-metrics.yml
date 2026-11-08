@@ -135,6 +135,8 @@ jobs:
       - name: Publish rendered cards
         run: |
           set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p assets/profile/metrics
           test -s /metrics_renders/rss.svg
           sudo install -m 644 /metrics_renders/rss.svg assets/profile/metrics/rss.svg
