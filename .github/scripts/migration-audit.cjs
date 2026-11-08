@@ -6,7 +6,15 @@ if (!target || !target.includes('/')) {
   console.error('Usage: TARGET_REPO=owner/repo node migration-audit.cjs');
   process.exit(2);
 }
-const [owner, repo] = target.split('/');
+const [ownerInput, repoInput] = target.split('/');
+const ownerPattern = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/;
+const repoPattern = /^[A-Za-z0-9._-]{1,100}$/;
+if (!ownerPattern.test(ownerInput) || !repoPattern.test(repoInput)) {
+  console.error('Invalid TARGET_REPO. Expected owner/repo using GitHub-safe characters only.');
+  process.exit(2);
+}
+const owner = ownerInput;
+const repo = repoInput;
 const ciCrossRepo = process.env.GITHUB_ACTIONS === 'true' && process.env.GITHUB_REPOSITORY !== target;
 const token = process.env.AUDIT_GH_TOKEN || (!ciCrossRepo ? (process.env.GH_TOKEN || '') : '');
 const headers = {
