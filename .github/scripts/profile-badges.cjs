@@ -64,6 +64,84 @@ async function repositorySizes(github) {
   return { kib, count };
 }
 
+
+function shorten(value, max) {
+  const characters = [...String(value)];
+  return characters.length > max ? characters.slice(0, max - 1).join("") + "…" : String(value);
+}
+
+async function recentCommits(github) {
+  const repositories = [];
+  for (const { owner, kind } of OWNERS) {
+    const owned = kind === "org"
+      ? await github.paginate(github.rest.repos.listForOrg, { org: owner, type: "public", per_page: 100 })
+      : await github.paginate(github.rest.repos.listForUser, { username: owner, type: "owner", per_page: 100 });
+    for (const repo of owned) {
+      if (repo.owner?.login?.toLowerCase() !== owner ||
+          repo.private || repo.disabled || repo.fork || repo.archived) continue;
+      repositories.push(repo);
+    }
+  }
+
+  const commits = [];
+  for (const repo of repositories) {
+    let data;
+    try {
+      ({ data } = await github.rest.repos.listCommits({
+        owner: repo.owner.login, repo: repo.name, per_page: 4,
+      }));
+    } catch (error) {
+      if ([404, 409].includes(error.status)) continue;
+      throw error;
+    }
+    for (const item of data) {
+      const subject = item.commit?.message?.split("\n")[0]?.trim();
+      const date = item.commit?.committer?.date || item.commit?.author?.date;
+      if (!subject || !date || !Number.isFinite(Date.parse(date))) continue;
+      if (/^chore\((?:readme|profile)\): refresh .*\[skip ci\]/i.test(subject)) continue;
+      commits.push({
+        repo: repo.full_name,
+        sha: item.sha,
+        subject,
+        author: item.author?.login || item.commit?.author?.name || "unknown",
+        date,
+      });
+    }
+  }
+  return commits
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date) ||
+      a.repo.localeCompare(b.repo) || a.sha.localeCompare(b.sha))
+    .slice(0, 6);
+}
+
+function activitySvg(commits) {
+  const rows = commits.length || 1;
+  const height = 68 + rows * 44 + 12;
+  const body = commits.length ? commits.map((item, index) => {
+    const y = 77 + index * 44;
+    const headline = escapeXml(shorten(item.subject, 78));
+    const details = escapeXml(shorten(
+      item.repo + "  ·  " + item.author + "  ·  " + item.date.slice(0, 10), 95,
+    ));
+    return '<text class="subject" x="22" y="' + y + '">' + headline + '</text>'
+      + '<text class="details" x="22" y="' + (y + 17) + '">' + details + '</text>';
+  }).join("") : '<text class="details" x="22" y="79">No commits found in public non-fork repositories.</text>';
+
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="650" height="' + height +
+    '" viewBox="0 0 650 ' + height + '" role="img" aria-labelledby="activity-title activity-desc">' +
+    '<title id="activity-title">Latest repository commits</title>' +
+    '<desc id="activity-desc">Recent commits across public trvny and travnie repositories, excluding forks and routine profile refreshes.</desc>' +
+    '<style>.bg{fill:#fff;stroke:#d0d7de}.heading{fill:#1f2328;font:700 19px system-ui,sans-serif}' +
+    '.subtitle{fill:#57606a;font:12px system-ui,sans-serif}.subject{fill:#1f2328;font:600 13px system-ui,sans-serif}' +
+    '.details{fill:#57606a;font:12px system-ui,sans-serif}' +
+    '@media(prefers-color-scheme:dark){.bg{fill:#0d1117;stroke:#30363d}.heading,.subject{fill:#e6edf3}' +
+    '.subtitle,.details{fill:#8b949e}}</style>' +
+    '<rect class="bg" x="1" y="1" width="648" height="' + (height - 2) + '" rx="12"/>' +
+    '<text class="heading" x="22" y="29">Latest repository commits</text>' +
+    '<text class="subtitle" x="22" y="48">trvny + travnie · public repositories · no forks</text>' +
+    body + '</svg>\n';
+}
+
 module.exports = async function generateProfileBadges({
   github, core, outputDir = "assets/profile/metrics",
 }) {
@@ -89,4 +167,14 @@ module.exports = async function generateProfileBadges({
     return kib >= 1048576 ? (kib / 1048576).toFixed(2) + " GiB"
       : (kib / 1024).toFixed(1) + " MiB";
   });
+  try {
+    const commits = await recentCommits(github);
+    fs.writeFileSync(path.join(outputDir, "activity.svg"), activitySvg(commits));
+    core.info("Latest repository commits: " + commits.length);
+  } catch (error) {
+    core.warning("Recent commits unavailable: " + error.message);
+    if (!fs.existsSync(path.join(outputDir, "activity.svg"))) {
+      fs.writeFileSync(path.join(outputDir, "activity.svg"), activitySvg([]));
+    }
+  }
 };
