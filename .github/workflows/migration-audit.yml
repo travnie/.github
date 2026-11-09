@@ -12,6 +12,10 @@ on:
         required: true
         default: trvny
 
+concurrency:
+  group: migration-audit-${{ inputs.repository }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
