@@ -13,7 +13,7 @@
 
 <sub></sub>
 
-[![Merged PRs](https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/merged-prs.svg)](../docs/profile-metrics.md#merged-pull-requests) [![Repository size](https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/repo-size.svg)](../docs/profile-metrics.md#repository-size)
+[![Merged PRs](https://raw.githubusercontent.com/trvny/.github/main/assets/profile/merged-prs.svg)](https://github.com/trvny/.github/blob/main/.github/workflows/stats.yml)
 
 [Polski](README_pl.md) · [English](README.md) · **简体中文**
 
@@ -41,13 +41,6 @@
 <div align="center">
 <sub>© trvny · 机器人也领工资 · 整合优先于碎片化 · 一件一件来，慢慢来</sub>
 </div>
-
-### :bar_chart: Workshop telemetry
-
-<p align="center">
-  <a href="https://trvny.github.io/feedseek/jbzd.xml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/rss.svg" alt="Latest JBZD posts via Feedseek" width="650"></a>
-  <a href="../.github/workflows/profile-metrics.yml"><img src="https://raw.githubusercontent.com/travnie/.github/main/assets/profile/metrics/activity.svg" alt="Latest commits across public trvny and travnie repositories" width="650"></a>
-</p>
 
 ### 我和我的伙计们
 
