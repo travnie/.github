@@ -8,7 +8,7 @@
 **Open source under one roof: apps, feeds, media, automation, and small machines that somehow became infrastructure.**
 
 [![organization](https://img.shields.io/badge/travnie-181717?style=for-the-badge&logo=github)](https://github.com/travnie) [![Docs7](https://raw.githubusercontent.com/travnie/.github/main/assets/badges/docs7.svg)](https://travnie.docs7.io/)  
-[![Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://trfny.com)
+[![Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://travny.pages.dev)
 
 <sub></sub>
 
