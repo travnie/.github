@@ -59,7 +59,6 @@
 <!--OPEN_PRS:START-->
 | 仓库 | PR | 标题 | 作者 | 状态 | 更新 |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/twojstar | [#473](https://github.com/travnie/twojstar/pull/473) | refactor(plugins): unify Claudin and OpenAI Dev Kit as Devloom | @trvny | 草稿 | 2026-11-14 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | 草稿 | 2026-11-13 |
 <!--OPEN_PRS:END-->
 
@@ -67,7 +66,7 @@
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝“If you think your users are idiots, only idiots will use it.”— Linus Torvalds❞</i>
+<i>❝If you don't read the newspaper, you're uninformed. If you read the newspaper, you're mis-informed. — Mark Twain❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
@@ -75,9 +74,9 @@
 
 <!--README_FEED:START-->
 - [How Climate Change Is Reshaping India’s Demographic Dividend](https://carnegieendowment.org/research/2026/11/how-climate-change-is-reshaping-indias-demographic-dividend)
-- [Naresh Bhatt Convicted: The Road to Justice for Mamta's Family | Case by Case | "48 Hours" Podcast](https://www.cbsnews.com/video/111326-48-hours-case-by-case-episode-30/)
-- [FAA issues nationwide ground stop, stranding thousands](https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/)
-- [Flights grounded across US after air traffic communications outage](https://www.reuters.com/world/us/faa-issues-national-ground-stop-due-extraordinary-circumstance-reasons-safety-2026-11-13/)
-- [Passengers rescued after tanker hit river cruise in New Orleans](https://www.cbsnews.com/news/tanker-cruise-collision-mississippi-river-new-orleans/)
-- [EXCLUSIVE: Investors flock to Anthropic IPO but question durability of AI lead](https://www.reuters.com/business/finance/investors-flock-anthropic-ipo-question-durability-ai-lead-2026-11-13/)
+- [Ranczo: Zemsta Wiedźm. Jest pierwszy zwiastun kultowego serialu](https://antyweb.pl/ranczo-zemsta-wiedzm-jest-pierwszy-zwiastun-kultowego-serialu)
+- [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)
+- [martin-olivier/airgorah](https://github.com/martin-olivier/airgorah)
+- [Tencent/LoopForge](https://github.com/Tencent/LoopForge)
+- [ag-ui-protocol/ag-ui](https://github.com/ag-ui-protocol/ag-ui)
 <!--README_FEED:END-->
