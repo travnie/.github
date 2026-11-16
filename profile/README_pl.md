@@ -59,14 +59,16 @@
 <!--OPEN_PRS:START-->
 | Repozytorium | PR | Tytuł | Autor | Stan | Aktualizacja |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | wersja robocza | 2026-11-13 |
+| travnie/aistee | [#479](https://github.com/travnie/aistee/pull/479) | feat(native): custom OpenAI-compatible endpoint over HTTPS | @trvny | gotowy | 2026-11-16 |
+| travnie/Autka | [#279](https://github.com/travnie/Autka/pull/279) | feat(search): add Tavily and bounded provider fallback | @trvny | gotowy | 2026-11-16 |
+| travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | wersja robocza | 2026-11-15 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Cytat z szuflady
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝If you don't read the newspaper, you're uninformed. If you read the newspaper, you're mis-informed. — Mark Twain❞</i>
+<i>❝“In an information economy, the most valuable company assets drive themselves home every night.  If they are not treated well, they do not return the next morning.”— Peter Chang❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
@@ -74,9 +76,9 @@
 
 <!--README_FEED:START-->
 - [How Climate Change Is Reshaping India’s Demographic Dividend](https://carnegieendowment.org/research/2026/11/how-climate-change-is-reshaping-indias-demographic-dividend)
-- [Ranczo: Zemsta Wiedźm. Jest pierwszy zwiastun kultowego serialu](https://antyweb.pl/ranczo-zemsta-wiedzm-jest-pierwszy-zwiastun-kultowego-serialu)
-- [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)
-- [martin-olivier/airgorah](https://github.com/martin-olivier/airgorah)
-- [Tencent/LoopForge](https://github.com/Tencent/LoopForge)
-- [ag-ui-protocol/ag-ui](https://github.com/ag-ui-protocol/ag-ui)
+- ["Promocja" na Black Weeks może być pułapką. Jak w 30 sekund sprawdzić najniższą cenę z 30 dni?](https://antyweb.pl/promocje-black-weeks-jak-sprawdzic)
+- [Tłumacz AI po polsku: DeepL czy Google i ile naprawdę przetłumaczysz za darmo](https://promptowy.com/tlumacz-ai-po-polsku-darmowe-limity/)
+- [Gregg Popovich surprises San Antonio H-E-B shoppers by paying for their groceries](https://sports.yahoo.com/articles/gregg-popovich-surprises-san-antonio-183353536.html)
+- [LSU guard Milaysia Fulwiley arrested; accused of hitting officer with vehicle, fleeing scene](https://sports.yahoo.com/womens-college-basketball/article/lsu-guard-milaysia-fulwiley-arrested-accused-of-hitting-officer-with-vehicle-fleeing-scene-183348603.html)
+- [Mike Vrabel reacts to Drake Maye injury, Patriots' loss vs. Lions](https://sports.yahoo.com/articles/mike-vrabel-reacts-drake-maye-183143056.html)
 <!--README_FEED:END-->
