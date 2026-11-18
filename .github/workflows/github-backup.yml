@@ -1096,7 +1096,7 @@ jobs:
   validate:
     name: Validate embedded backup helpers
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       contents: read
     steps:
