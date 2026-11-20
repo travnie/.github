@@ -58,25 +58,36 @@
 | Repository | PR | Title | Author | State | Updated |
 | --- | ---: | --- | --- | --- | --- |
 | travnie/aistee | [#480](https://github.com/travnie/aistee/pull/480) | feat(native): custom endpoint over cleartext to on-device loopback | @trvny | ready | 2026-11-16 |
-| travnie/Autka | [#288](https://github.com/travnie/Autka/pull/288) | feat(search): enable limited PL pilot | @trvny | ready | 2026-11-17 |
+| travnie/aistee | [#481](https://github.com/travnie/aistee/pull/481) | fix(web): sign-in recovery for every provider | @trvny | ready | 2026-11-20 |
+| travnie/aistee | [#482](https://github.com/travnie/aistee/pull/482) | feat(web): browser-backed provider tabs | @trvny | ready | 2026-11-20 |
+| travnie/Autka | [#290](https://github.com/travnie/Autka/pull/290) | feat(search): indexed PL previews on Android and iOS | @trvny | ready | 2026-11-19 |
+| travnie/Kanarek | [#238](https://github.com/travnie/Kanarek/pull/238) | chore(deps): bump actions/setup-java from 6.2.0 to 6.3.0 | @dependabot[bot] | ready | 2026-11-18 |
+| travnie/Kanarek | [#239](https://github.com/travnie/Kanarek/pull/239) | chore(deps-dev): bump wrangler from 4.159.0 to 4.162.0 in /worker | @dependabot[bot] | ready | 2026-11-18 |
+| travnie/Kanarek | [#240](https://github.com/travnie/Kanarek/pull/240) | chore(deps-dev): bump @cloudflare/workers-types from 5.20261109.1 to 5.20261115.1 in /worker | @dependabot[bot] | ready | 2026-11-18 |
+| travnie/Kanarek | [#241](https://github.com/travnie/Kanarek/pull/241) | chore(deps): bump org.robolectric:robolectric from 4.17 to 4.18 | @dependabot[bot] | ready | 2026-11-18 |
+| travnie/Kanarek | [#242](https://github.com/travnie/Kanarek/pull/242) | chore(deps): bump roborazzi from 1.78.0 to 1.79.0 | @dependabot[bot] | ready | 2026-11-18 |
+| travnie/Kanarek | [#243](https://github.com/travnie/Kanarek/pull/243) | chore(deps): bump gradle-wrapper from 9.9.0 to 9.9.1 | @dependabot[bot] | ready | 2026-11-18 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | draft | 2026-11-15 |
+| travnie/wambridge | [#282](https://github.com/travnie/wambridge/pull/282) | chore(deps): bump actions/setup-java from 6.2.0 to 6.3.0 in the actions group | @dependabot[bot] | ready | 2026-11-19 |
+| travnie/wambridge | [#283](https://github.com/travnie/wambridge/pull/283) | chore(deps-dev): bump ruff from 0.17.4 to 0.17.5 in the uv group | @dependabot[bot] | ready | 2026-11-19 |
+| travnie/wambridge | [#284](https://github.com/travnie/wambridge/pull/284) | chore(deps): bump gradle-wrapper from 9.9.0 to 9.9.1 in /mobile in the gradle group | @dependabot[bot] | ready | 2026-11-19 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Quote from the drawer
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝Imagination is eye of the soul. — Anonymous❞</i>
+<i>❝Study me as much as you like, you will not know me, for I differ in a hundred ways from what you see me to be. Put yourself behind my eyes and see me as I see myself, for I have chosen to dwell in a place you cannot see. — Rumi❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 Recently on the air
 
 <!--README_FEED:START-->
-- [Apple ma ogromne problemy. Nie działają kluczowe usługi](https://antyweb.pl/apple-ma-ogromne-problemy-nie-dzialaja-kluczowe-uslugi)
-- [Instagram Live z OBS bez rozciągniętej gry. Pionowy układ 9:16 krok po kroku](https://promptowy.com/instagram-live-obs-pion-9-16/)
-- [Gemini 4 Carbon: API, cena i czy jest za darmo \(Python, curl, OpenRouter\)](https://promptowy.com/gemini-4-carbon-api-cena/)
-- [Co umie Gemini 4 Carbon: 12 zadań z promptami i wynikami](https://promptowy.com/gemini-4-carbon-co-umie/)
-- [Gemini 4 Hydrogen za darmo: gdzie działa bez płacenia, limity, API i plany w Polsce](https://promptowy.com/gemini-4-hydrogen-za-darmo/)
-- [Gemini czy ChatGPT? Gemini 4 Hydrogen kontra GPT-6.2 Sol - test 7 zadań po polsku](https://promptowy.com/gemini-vs-chatgpt-hydrogen-vs-gpt-6-2-sol/)
+- [Like A Complete \(Known\) Unknown? A Brief History of Nuclear Weaponization](https://carnegieendowment.org/research/2026/11/a-brief-history-of-nuclear-weaponization)
+- [Ranking graczy GTA 6: top 50 według procentu ukończenia - PSN, Xbox i checklista](https://promptowy.com/gta-6-ranking-graczy/)
+- [Quiz GTA 6: wyzwanie dnia i 7 quizów - mapa, auta, 100%, Miami, postacie](https://promptowy.com/gta-6-quiz/)
+- [Quiz: prawdziwe Miami czy Leonida z GTA 6? Zgadnij po zdjęciu](https://promptowy.com/gta-6-quiz-miami-czy-leonida/)
+- [Quiz GTA 6: czy zrobisz 100%? 12 pytań o progi, kolekcje i trofea](https://promptowy.com/gta-6-quiz-100-procent/)
+- [Quiz GTA: ile wiesz o serii Grand Theft Auto? 15 pytań od 1997 roku](https://promptowy.com/quiz-gta/)
 <!--README_FEED:END-->
