@@ -57,27 +57,19 @@
 <!--OPEN_PRS:START-->
 | Repository | PR | Title | Author | State | Updated |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#480](https://github.com/travnie/aistee/pull/480) | feat(native): custom endpoint over cleartext to on-device loopback | @trvny | ready | 2026-11-16 |
-| travnie/aistee | [#481](https://github.com/travnie/aistee/pull/481) | fix(web): sign-in recovery for every provider | @trvny | ready | 2026-11-20 |
-| travnie/aistee | [#482](https://github.com/travnie/aistee/pull/482) | feat(web): browser-backed provider tabs | @trvny | ready | 2026-11-20 |
+| travnie/aistee | [#486](https://github.com/travnie/aistee/pull/486) | deps: bump the gradle-minor-patch group with 7 updates | @dependabot[bot] | ready | 2026-11-21 |
+| travnie/aistee | [#487](https://github.com/travnie/aistee/pull/487) | deps: bump appfunctions from 1.0.0-rc01 to 1.0.0 | @dependabot[bot] | ready | 2026-11-21 |
 | travnie/Autka | [#290](https://github.com/travnie/Autka/pull/290) | feat(search): indexed PL previews on Android and iOS | @trvny | ready | 2026-11-19 |
-| travnie/Kanarek | [#238](https://github.com/travnie/Kanarek/pull/238) | chore(deps): bump actions/setup-java from 6.2.0 to 6.3.0 | @dependabot[bot] | ready | 2026-11-18 |
-| travnie/Kanarek | [#239](https://github.com/travnie/Kanarek/pull/239) | chore(deps-dev): bump wrangler from 4.159.0 to 4.162.0 in /worker | @dependabot[bot] | ready | 2026-11-18 |
-| travnie/Kanarek | [#240](https://github.com/travnie/Kanarek/pull/240) | chore(deps-dev): bump @cloudflare/workers-types from 5.20261109.1 to 5.20261115.1 in /worker | @dependabot[bot] | ready | 2026-11-18 |
-| travnie/Kanarek | [#241](https://github.com/travnie/Kanarek/pull/241) | chore(deps): bump org.robolectric:robolectric from 4.17 to 4.18 | @dependabot[bot] | ready | 2026-11-18 |
-| travnie/Kanarek | [#242](https://github.com/travnie/Kanarek/pull/242) | chore(deps): bump roborazzi from 1.78.0 to 1.79.0 | @dependabot[bot] | ready | 2026-11-18 |
-| travnie/Kanarek | [#243](https://github.com/travnie/Kanarek/pull/243) | chore(deps): bump gradle-wrapper from 9.9.0 to 9.9.1 | @dependabot[bot] | ready | 2026-11-18 |
+| travnie/twojstar | [#538](https://github.com/travnie/twojstar/pull/538) | chore(deps-dev): Bump @cloudflare/workers-types from 5.20261117.1 to 5.20261118.1 in /weather-feed in the weather group | @dependabot[bot] | ready | 2026-11-21 |
+| travnie/twojstar | [#539](https://github.com/travnie/twojstar/pull/539) | chore(deps): Bump astral-sh/setup-uv from 10.3.3 to 10.4.0 in the actions group | @dependabot[bot] | ready | 2026-11-21 |
 | travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | draft | 2026-11-15 |
-| travnie/wambridge | [#282](https://github.com/travnie/wambridge/pull/282) | chore(deps): bump actions/setup-java from 6.2.0 to 6.3.0 in the actions group | @dependabot[bot] | ready | 2026-11-19 |
-| travnie/wambridge | [#283](https://github.com/travnie/wambridge/pull/283) | chore(deps-dev): bump ruff from 0.17.4 to 0.17.5 in the uv group | @dependabot[bot] | ready | 2026-11-19 |
-| travnie/wambridge | [#284](https://github.com/travnie/wambridge/pull/284) | chore(deps): bump gradle-wrapper from 9.9.0 to 9.9.1 in /mobile in the gradle group | @dependabot[bot] | ready | 2026-11-19 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Quote from the drawer
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝Study me as much as you like, you will not know me, for I differ in a hundred ways from what you see me to be. Put yourself behind my eyes and see me as I see myself, for I have chosen to dwell in a place you cannot see. — Rumi❞</i>
+<i>❝In 2012, the founder of McAfee Antivirus, John McAfee was asked if he personally uses McAfee anti-virus, he replied by saying “I take it off,” and that “It’s too annoying.”❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
@@ -85,9 +77,9 @@
 
 <!--README_FEED:START-->
 - [Like A Complete \(Known\) Unknown? A Brief History of Nuclear Weaponization](https://carnegieendowment.org/research/2026/11/a-brief-history-of-nuclear-weaponization)
-- [Ranking graczy GTA 6: top 50 według procentu ukończenia - PSN, Xbox i checklista](https://promptowy.com/gta-6-ranking-graczy/)
-- [Quiz GTA 6: wyzwanie dnia i 7 quizów - mapa, auta, 100%, Miami, postacie](https://promptowy.com/gta-6-quiz/)
-- [Quiz: prawdziwe Miami czy Leonida z GTA 6? Zgadnij po zdjęciu](https://promptowy.com/gta-6-quiz-miami-czy-leonida/)
-- [Quiz GTA 6: czy zrobisz 100%? 12 pytań o progi, kolekcje i trofea](https://promptowy.com/gta-6-quiz-100-procent/)
-- [Quiz GTA: ile wiesz o serii Grand Theft Auto? 15 pytań od 1997 roku](https://promptowy.com/quiz-gta/)
+- [Cyber Statecraft and the Middle Ground](https://carnegieendowment.org/research/2026/11/cyber-statecraft-and-the-middle-ground)
+- [Murder at Mount Hood | Post Mortem](https://www.cbsnews.com/video/112126-48-hours-post-mortem-episode-5/)
+- [Zostań policjantem! Promocja zawodu podczas Powiatowego Dnia Przedsiębiorczości - Przegląd Olkuski](https://news.google.com/atom/articles/CBMirgFBVV95cUxQU2hUWGVXeWQtTDdoN2hERXlkYmZrUnBLZ1UxcTRqdTJVSW1fV0FfTDcyN1V1dEs5VGlPN0R1QjZFV2g5QUgxTnVMaHFLQThkS2ZNbkI2ODFnYk04LVdCVXhGazJBUUxRLVR6aEpJek1yMERIR2tyZmdkeVItU3djZG1YTWRFNjFwUThiQ0VyNHhQaWRReVd6WnBGU1NQT0xRZDdHMlFyOUhxYzBjUFE?oc=5)
+- [Jest decyzja dla drugiego etapu drogi do Jaworzna - Przegląd Olkuski](https://news.google.com/atom/articles/CBMihAFBVV95cUxON1FrUnhmRU95cGl1ZDk2SFp4SFlzSVA3UzRrQ09vSEFldEdUVTFLUDRzN19TbmhVYk4yR1ZFRkFOYlY1b0lKbkV3aDBGZmRBVGxoR0JoWUhBZmI3TUVudk0tQzdpdGxlM2o5TEtJS0lxMEpkdTRDc05rMm1TSDk1bWdrVFQ?oc=5)
+- [Jets urged to get 1st-round pick involved on offense to help end TD drought](https://www.sportingnews.com/us/nfl/new-york-jets/news/jets-urged-get-1st-round-pick-involved-help-end-td-drought/a00fb6698aa10c5b3e3f2767)
 <!--README_FEED:END-->
