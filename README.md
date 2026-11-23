@@ -9,4 +9,4 @@
 
 Code, workflows, and configuration are licensed under [ISC](LICENSE).  
 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width:1em;max-height:1em;margin-left: .2em;"> Original content, documentation, and graphics are available under [CC BY 4.0](docs/LICENSES/LICENSE.CC_BY_4.0).
-Third-party materials are documented in [THIRD_PARTY_NOTICES.md](docs/THIRD_PARTY_NOTICES.md).
+Third-party assets and dependencies retain their respective licenses and rights.
