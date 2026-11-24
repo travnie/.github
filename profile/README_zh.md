@@ -59,29 +59,29 @@
 <!--OPEN_PRS:START-->
 | 仓库 | PR | 标题 | 作者 | 状态 | 更新 |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#486](https://github.com/travnie/aistee/pull/486) | deps: bump the gradle-minor-patch group with 7 updates | @dependabot[bot] | 就绪 | 2026-11-21 |
-| travnie/aistee | [#487](https://github.com/travnie/aistee/pull/487) | deps: bump appfunctions from 1.0.0-rc01 to 1.0.0 | @dependabot[bot] | 就绪 | 2026-11-21 |
+| travnie/aistee | [#493](https://github.com/travnie/aistee/pull/493) | experiment: AI Studio WebView variant (do not merge) | @trvny | 草稿 | 2026-11-23 |
 | travnie/Autka | [#290](https://github.com/travnie/Autka/pull/290) | feat(search): indexed PL previews on Android and iOS | @trvny | 就绪 | 2026-11-19 |
-| travnie/twojstar | [#538](https://github.com/travnie/twojstar/pull/538) | chore(deps-dev): Bump @cloudflare/workers-types from 5.20261117.1 to 5.20261118.1 in /weather-feed in the weather group | @dependabot[bot] | 就绪 | 2026-11-21 |
-| travnie/twojstar | [#539](https://github.com/travnie/twojstar/pull/539) | chore(deps): Bump astral-sh/setup-uv from 10.3.3 to 10.4.0 in the actions group | @dependabot[bot] | 就绪 | 2026-11-21 |
-| travnie/wambridge | [#234](https://github.com/travnie/wambridge/pull/234) | test: measure native speaker control latency without changing playback | @trvny | 草稿 | 2026-11-15 |
+| travnie/Autka | [#291](https://github.com/travnie/Autka/pull/291) | ci: bump the actions group with 3 updates | @dependabot[bot] | 就绪 | 2026-11-23 |
+| travnie/Autka | [#292](https://github.com/travnie/Autka/pull/292) | deps(backend): bump the backend-minor-patch group in /backend with 4 updates | @dependabot[bot] | 就绪 | 2026-11-23 |
+| travnie/Autka | [#293](https://github.com/travnie/Autka/pull/293) | deps: bump the misc-minor-patch group with 5 updates | @dependabot[bot] | 就绪 | 2026-11-23 |
+| travnie/twojstar | [#568](https://github.com/travnie/twojstar/pull/568) | feat(paintdotnet): add offline Smart Transparency | @trvny | 就绪 | 2026-11-23 |
 <!--OPEN_PRS:END-->
 
 ### 💬 抽屉里的名言
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝In 2012, the founder of McAfee Antivirus, John McAfee was asked if he personally uses McAfee anti-virus, he replied by saying “I take it off,” and that “It’s too annoying.”❞</i>
+<i>❝There is a programming language called INTERCAL which has keywords like IGNORE, PLEASE , FORGET. If you don’t use PLEASE enough times while coding, Compiler rejects the code.❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 最近播出
 
 <!--README_FEED:START-->
-- [Like A Complete \(Known\) Unknown? A Brief History of Nuclear Weaponization](https://carnegieendowment.org/research/2026/11/a-brief-history-of-nuclear-weaponization)
-- [Cyber Statecraft and the Middle Ground](https://carnegieendowment.org/research/2026/11/cyber-statecraft-and-the-middle-ground)
-- [Murder at Mount Hood | Post Mortem](https://www.cbsnews.com/video/112126-48-hours-post-mortem-episode-5/)
-- [Zostań policjantem! Promocja zawodu podczas Powiatowego Dnia Przedsiębiorczości - Przegląd Olkuski](https://news.google.com/atom/articles/CBMirgFBVV95cUxQU2hUWGVXeWQtTDdoN2hERXlkYmZrUnBLZ1UxcTRqdTJVSW1fV0FfTDcyN1V1dEs5VGlPN0R1QjZFV2g5QUgxTnVMaHFLQThkS2ZNbkI2ODFnYk04LVdCVXhGazJBUUxRLVR6aEpJek1yMERIR2tyZmdkeVItU3djZG1YTWRFNjFwUThiQ0VyNHhQaWRReVd6WnBGU1NQT0xRZDdHMlFyOUhxYzBjUFE?oc=5)
-- [Jest decyzja dla drugiego etapu drogi do Jaworzna - Przegląd Olkuski](https://news.google.com/atom/articles/CBMihAFBVV95cUxON1FrUnhmRU95cGl1ZDk2SFp4SFlzSVA3UzRrQ09vSEFldEdUVTFLUDRzN19TbmhVYk4yR1ZFRkFOYlY1b0lKbkV3aDBGZmRBVGxoR0JoWUhBZmI3TUVudk0tQzdpdGxlM2o5TEtJS0lxMEpkdTRDc05rMm1TSDk1bWdrVFQ?oc=5)
-- [Jets urged to get 1st-round pick involved on offense to help end TD drought](https://www.sportingnews.com/us/nfl/new-york-jets/news/jets-urged-get-1st-round-pick-involved-help-end-td-drought/a00fb6698aa10c5b3e3f2767)
+- [Będzie jeszcze taniej! Wielka zmiana w ofercie smart home IKEA](https://antyweb.pl/bedzie-jeszcze-taniej-wielka-zmiana-w-ofercie-smart-home-ikea)
+- [GTA VI: rekord PlayStation to 39 mln graczy na PS5, nie sprzedanych kopii](https://promptowy.com/gta-vi-rekord-playstation-39-mln-graczy/)
+- [Gold edges up on bargain buying after selloff; US inflation data awaited](https://www.reuters.com/world/india/gold-edges-up-bargain-buying-after-selloff-us-inflation-data-awaited-2026-11-24/)
+- [Vice City w GTA 6 - gdzie leży, dzielnice, siłownie i prawdziwe Miami](https://promptowy.com/gta-6-vice-city/)
+- [GTA 6 Imponte Phoenix ’77 - gdzie znaleźć, misja, cena i warianty](https://promptowy.com/gta-6-imponte-phoenix/)
+- [GTA 6 Vapid Dominator Buggy ’67 - gdzie znaleźć i jak odebrać](https://promptowy.com/gta-6-vapid-dominator-buggy/)
 <!--README_FEED:END-->
