@@ -57,29 +57,34 @@
 <!--OPEN_PRS:START-->
 | Repository | PR | Title | Author | State | Updated |
 | --- | ---: | --- | --- | --- | --- |
-| travnie/aistee | [#493](https://github.com/travnie/aistee/pull/493) | experiment: AI Studio WebView variant (do not merge) | @trvny | draft | 2026-11-23 |
+| travnie/aistee | [#493](https://github.com/travnie/aistee/pull/493) | experiment: AI Studio WebView variant (do not merge) | @trvny | draft | 2026-11-24 |
+| travnie/aistee | [#494](https://github.com/travnie/aistee/pull/494) | feat(web): import external prompt-vault JSON adapters | @trvny | ready | 2026-11-25 |
 | travnie/Autka | [#290](https://github.com/travnie/Autka/pull/290) | feat(search): indexed PL previews on Android and iOS | @trvny | ready | 2026-11-19 |
-| travnie/Autka | [#291](https://github.com/travnie/Autka/pull/291) | ci: bump the actions group with 3 updates | @dependabot[bot] | ready | 2026-11-23 |
-| travnie/Autka | [#292](https://github.com/travnie/Autka/pull/292) | deps(backend): bump the backend-minor-patch group in /backend with 4 updates | @dependabot[bot] | ready | 2026-11-23 |
-| travnie/Autka | [#293](https://github.com/travnie/Autka/pull/293) | deps: bump the misc-minor-patch group with 5 updates | @dependabot[bot] | ready | 2026-11-23 |
-| travnie/twojstar | [#568](https://github.com/travnie/twojstar/pull/568) | feat(paintdotnet): add offline Smart Transparency | @trvny | ready | 2026-11-23 |
+| travnie/Kanarek | [#249](https://github.com/travnie/Kanarek/pull/249) | chore(deps-dev): bump wrangler from 4.162.0 to 4.166.0 in /worker | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#250](https://github.com/travnie/Kanarek/pull/250) | chore(deps-dev): bump @cloudflare/workers-types from 5.20261115.1 to 5.20261121.1 in /worker | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#251](https://github.com/travnie/Kanarek/pull/251) | chore(deps-dev): bump vitest from 5.1.0 to 5.1.1 in /worker | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#252](https://github.com/travnie/Kanarek/pull/252) | chore(deps): bump feedsmith from 3.0.1 to 3.1.0 in /worker | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#253](https://github.com/travnie/Kanarek/pull/253) | chore(deps): bump the androidx group with 2 updates | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#254](https://github.com/travnie/Kanarek/pull/254) | chore(deps): bump agp from 9.5.1 to 9.5.3 | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#255](https://github.com/travnie/Kanarek/pull/255) | chore(deps): bump gradle-wrapper from 9.9.1 to 9.9.2 | @dependabot[bot] | ready | 2026-11-25 |
+| travnie/Kanarek | [#256](https://github.com/travnie/Kanarek/pull/256) | chore(deps): bump org.robolectric:robolectric from 4.18 to 4.18.1 | @dependabot[bot] | ready | 2026-11-25 |
 <!--OPEN_PRS:END-->
 
 ### 💬 Quote from the drawer
 
 <!-- markdownlint-disable MD033 -->
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝There is a programming language called INTERCAL which has keywords like IGNORE, PLEASE , FORGET. If you don’t use PLEASE enough times while coding, Compiler rejects the code.❞</i>
+<i>❝The most original authors are not so because they advance what is new, but because they put what they have to say as if it had never been said before. — Johann Wolfgang von Goethe❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 <!-- markdownlint-enable MD033 -->
 
 ### 📰 Recently on the air
 
 <!--README_FEED:START-->
-- [Będzie jeszcze taniej! Wielka zmiana w ofercie smart home IKEA](https://antyweb.pl/bedzie-jeszcze-taniej-wielka-zmiana-w-ofercie-smart-home-ikea)
-- [GTA VI: rekord PlayStation to 39 mln graczy na PS5, nie sprzedanych kopii](https://promptowy.com/gta-vi-rekord-playstation-39-mln-graczy/)
-- [Gold edges up on bargain buying after selloff; US inflation data awaited](https://www.reuters.com/world/india/gold-edges-up-bargain-buying-after-selloff-us-inflation-data-awaited-2026-11-24/)
-- [Vice City w GTA 6 - gdzie leży, dzielnice, siłownie i prawdziwe Miami](https://promptowy.com/gta-6-vice-city/)
-- [GTA 6 Imponte Phoenix ’77 - gdzie znaleźć, misja, cena i warianty](https://promptowy.com/gta-6-imponte-phoenix/)
-- [GTA 6 Vapid Dominator Buggy ’67 - gdzie znaleźć i jak odebrać](https://promptowy.com/gta-6-vapid-dominator-buggy/)
+- [Remont zamknie 1,7 km ul. Jurajskiej. Objazd w Rudnie poprowadzi Zamkową - Fakty Krakowa](https://news.google.com/atom/articles/CBMirAFBVV95cUxNWFkxc1pEMy14QWRmSWQzRFkxdnRyVGhiWkhjRzNzeXRISE4taU82R0I0QU1Kc0xibVRwLUxzSlRfMEl3WmgtSU9PU2dNOEI3bExHWWdrMEkxLTlieDZLamRHMkNXaVA0bS1OTUxpUXAyQ2h1Nm8wUFE4Y2M1a3lCaHc1X2x6QUpnMGhMUXVZOTN6T0QtV01EQWNfXzBBcTVlRXYtcTNOYjBGckZo?oc=5)
+- [FCC wydało zgodę na kosmiczny superkomputer. SpaceX ma czas do 2040 roku](https://antyweb.pl/fcc-wydalo-zgode-na-kosmiczny-superkomputer-spacex-ma-czas-do-2040-roku)
+- [Grasz w GTA VI na PS5? Twoja konsola może… spłonąć](https://antyweb.pl/grasz-w-gta-vi-na-ps5-twoja-konsola-moze-splonac)
+- [Problem z baterią w One UI 9.0. Samsung obiecuje poprawkę](https://antyweb.pl/problem-z-bateria-w-one-ui-9-0-samsung-obiecuje-poprawke)
+- [W OpenAI i Anthropic czają się potwory. Te firmy boją się je wypuścić na świat](https://antyweb.pl/anthropic-openai-koniec-swiata-ai)
+- [Koniec muzycznego spamu. 29 milionów utworów AI znika ze streamingu](https://antyweb.pl/koniec-muzycznego-spamu-29-milionow-utworow-ai-znika-ze-streamingu)
 <!--README_FEED:END-->
